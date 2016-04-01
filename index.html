@@ -44,39 +44,404 @@
 
         <!--Introduction slide-->
         <section>
-            <h1>Class Name</h1>
+            <h1>Object Oriented JavaScript</h1>
             <h3></h3>
             <p>
 
             </p>
         </section>
-        <!--/Intro Slides-->
+        <!--Slide 1-->
 
         <section>
-            <h2></h2>
-            <pre><code class="hljs" data-trim contenteditable>
+            <h2>What is Object Oriented Programming?</h2>
+            <p>
+                Object oriented programming is a programming paradigm based on the concept of "objects", which may contain data, in the form of fields, often known as attributes or keys; and code, in the form of procedures, often known as methods.
+            </p>
+            <aside class="notes"></aside>
+        </section>
 
+        <!--Slide 2-->
+        <section>
+            <h2>Objects</h2>
+            <ul>
+                <li class="fragment">We have used Objects for storing information and we have manipulated and accessed the data within objects.</li>
+                <li class="fragment">Remember: An object is a <strong style="color: black; background-color: white">container</strong> for values in the form of properties and <strong style="color: black; background-color: white">functionality</strong> in the form of methods.
+                </li>
+                <li class="fragment">Ex: .getElementById is a method to find a tag with the corresponding AND it is a method on the document object.</li>
+            </ul>
+            <aside class="notes"></aside>
+        </section>
+
+        <!--Slide 3-->
+        <section>
+            <h2>Adding Methods to Objects</h2>
+            <pre><code class="hljs" data-trim contenteditable>
+        function diceRoll() {
+        var sides = 6;
+        var randomNumber = Math.floor(Math.random() * sides) + 1;
+        console.log(randomNumber);
+        }
+        
+    var dice = {
+        
+        }
+            </code></pre>
+            <aside class="notes"></aside>
+        </section> 
+        <!--Slide 4-->
+        
+        <section>
+            <h2>Adding Methods to Objects</h2>
+            <pre><code class="hljs" data-trim contenteditable>
+        var dice = {
+            roll: function diceRoll() {
+            var sides = 6;
+            var randomNumber = Math.floor(Math.random() * sides) + 1;
+            console.log(randomNumber);
+        };
             </code></pre>
             <p>
-                <a href=""></a>
+                Run dice.roll in the console. 
             </p>
             <aside class="notes"></aside>
-        </section>
-
-
-        <!--Slide with list temp-->
+        </section> 
+        
+        <!--Slide 5-->
+        
         <section>
-            <h2></h2>
-            <ul>
-                <li class="fragment"><a href="" target="_blank"></a></li>
-                <li class="fragment"></li>
-            </ul>
+            <h2>Adding Methods to Objects</h2>
+            <pre><code class="hljs" data-trim contenteditable>
+        var dice = {
+            roll: function {
+            var sides = 6;
+            var randomNumber = Math.floor(Math.random() * sides) + 1;
+            console.log(randomNumber);
+        };
+            </code></pre>
             <p>
-                <a href=""></a>
+                Run dice.roll() in the console. 
+            </p>
+            <aside class="notes"></aside>
+        </section> 
+
+        <!--Slide 6-->
+        
+        <section>
+            <h2>Variable Scope in Objects</h2>
+             <p>
+                What should we do if we want to change the var sides to a property of the object? How will the function call it?
+            </p>
+            <pre><code class="hljs" data-trim contenteditable>
+        var dice = {
+            roll: function() {
+            var sides = 6;
+            var randomNumber = Math.floor(Math.random() *   sides) + 1;
+            console.log(randomNumber);
+        };
+            </code></pre>
+            <aside class="notes"></aside>
+        </section> 
+        <!--Slide 7-->
+        
+        <section>
+            <h2>Variable Scope in Objects</h2>
+            
+            <pre><code class="hljs" data-trim contenteditable>
+        var dice = {
+            roll: function() {
+            sides: 6;
+            var randomNumber = Math.floor(Math.random() *   dice.sides) + 1;
+            console.log(randomNumber);
+        };
+            </code></pre>
+             <p>
+                Now we can easily change the value of the property sides in the console by doing dice.sides=10.
+            </p>
+            <aside class="notes"></aside>
+        </section> 
+
+        <!--Slide 8-->
+
+        <section>
+            <h2>Remember Scope?</h2>
+            <p>
+                <a href="www.teaching-materials.org/jsreview/#/30">Refresh your memory here!</a>
             </p>
             <aside class="notes"></aside>
         </section>
 
+         <!--Slide 9-->
+        <section>
+            <h2>Introducing 'this'</h2>
+            <ul>
+                <li class="fragment">JavaScript gives you, the developer, access to an extremely powerful keyword - “this”. “this” can be used to access data contextually, allowing your functions and methods to access the data that they need based on a specific context.</li>
+                <li class="fragment">The ‘this’ keyword can be used to access values, methods, and other objects on a context specific basis. (Meaning, ‘this’ changes based on where it is used.)
+                </li>
+            </ul>
+            <aside class="notes"></aside>
+        </section>
+        
+        <!--Slide 10-->
+        
+        <section>
+            <h2>Introducing 'this'</h2>
+            <p>
+                First way to use “this”: Inside a function!
+            </p>
+            <pre><code class="hljs" data-trim contenteditable>
+    var Portland = {
+        bridges: 12,
+        airport: 1,
+        soccerTeams: 1,
+        logNumberOfBridges: function ( ) {
+            console.log (“There are “ + this.bridges + “ bridges in Portland”)
+        }
+    }
+
+    Portland.logNumberOfBridges( );
+            </code></pre>
+             <p>
+            When ‘this’ is being called by a method on an object,will always reference the object itself.  
+            </p>
+            <aside class="notes"></aside>
+        </section> 
+
+        <!--Slide 11-->
+        <section>
+            <h2>Brainstorm</h2>
+            <ul>
+                <li class="fragment">What should you do if you want to create a lot of objects with some of the same keys/properties but different values? </li>
+                <li class="fragment">EX: You are working at Facebook and want to be able to store the same type of information about all your users, BUT creating an object literal for each user would take you a LOOOOONG time.
+                </li>
+            </ul>
+            <aside class="notes"></aside>
+        </section>
+    <!--Slide 12-->
+        <section>
+            <h2>Object Literal vs Object Constructor</h2>
+            <ul>
+                <li class="fragment">Object literals aren't the only way to create objects. If you're making a lot of similar objects you can use a constructor function to generate new objects of the same kind.</li>
+                <li class="fragment">Object literals are great for one off objects or passing values to a function, but if you want to create multiple object of the same kind or type, you'll need to use constructor functions. 
+                </li>
+            </ul>
+            <aside class="notes"></aside>
+        </section>
+        <!--Slide 13-->
+        <section>
+            <h2>Object Literal vs Object Constructor</h2>
+            <p>Object Constructor Properties</p>
+            <ol>
+                <li class="fragment">Describes how an object should be created.</li>
+                <li class="fragment">Creates similar objects
+                </li>
+                <li class="fragment">Each object created is known as an instance of that object type.</li>
+            </ol>
+        </section>
+
+        <!--Slide 14-->
+        <section>
+            <h2>Object Literal vs Object Constructor</h2>
+            <p>Example:</p>
+            <pre><code class="hljs" data-trim contenteditable>
+    function Contact (name, email) {
+        this.name = name;
+        this.email = email;
+    }
+    var contact = new Contact (“Laura”, “laura@hello.com”);
+            </code></pre>
+            <p>//Note: the name of the function is capitalized so you know it is a constructor!</p>
+            <aside class="notes"></aside>
+        </section>
+
+    <!--Slide 15-->
+        <section>
+            <h2>Object Literal vs Object Constructor</h2>
+            <ul>
+                <li class="fragment">Keyword “new” turns regular function in to a constructor function. </li>
+                <li class="fragment">NOW, ‘this’ in our function means a new instance of an object.  It works kind of like this:  this = { }; 
+                </li>
+                <li class="fragment">The dot notation creates the keys for the new object.</li>
+            </ul>
+        </section>
+
+   <!--Slide 16-->
+        <section>
+            <h2>Object Literal vs Object Constructor</h2>
+            <ul>
+                <li class="fragment">By creating the “var contact”, we're creating a new contact instance.</li>
+                <li class="fragment">An instance is the specific realization of a particular type or object.
+                </li>
+                <li class="fragment"><p>How would we create another instance of this object constructor?</p></li>
+                <li class="fragment"> <pre><code class="hljs" data-trim contenteditable>
+    function Contact (name, email) {
+        this.name = name;
+        this.email = email;
+    }
+            </code></pre></li>
+            </ul>
+        </section>
+
+    <!--Slide 17-->
+        <section>
+            <h2>Object Literal vs Object Constructor</h2>
+            <p>Object Literal</p>
+            <pre><code class="hljs" data-trim contenteditable>
+        var flower = {
+            color : "red",
+            petals : 32,
+            smellsPretty : true
+        }
+            </code></pre>
+
+            <p>Constructor Object</p>
+            <pre><code class="hljs" data-trim contenteditable>
+        function Flower(color, petals){
+            this.color = color;
+            this.petals = petals;
+            this.smellsPretty= true;
+        }
+            </code></pre>
+        </section>
+   <!--Slide 18-->
+
+        <section>
+            <p>Can you think of other specific times when you would need to use an object constructor?</p>
+        </section>
+
+    <!--Slide 19-->
+
+        <section>
+            <h1>QUIZ! :) </h1>
+        </section>
+
+    <!--Slide 20-->
+        <section>
+            <h2>Question 1</h2>
+            <p>Given the following code what is the best way to describe Monster?</p>
+            <pre><code class="hljs" data-trim contenteditable>
+    function Monster(rank) {
+        this.rank = rank;
+        this.health = 100;
+        this.takeHit = function() {
+            this.health--;
+            }
+        this.isDead = function() {
+            return this.health <= 0;
+        } 
+    }
+
+    var monster = new Monster("Captain");
+            </code></pre>
+            <p>A) A regular function</p>
+            <p>B) A constructor function</p>
+            <p>C) An instance of Monster</p>
+            <aside class="notes"></aside>
+        </section>
+
+    <!--Slide 21-->
+        <section>
+            <h2>Question 2</h2>
+            <p>Given the following code: </p>
+            <pre><code class="hljs" data-trim contenteditable>
+    function Animal(breed, noise) {
+        this.breed = breed;
+        this.noise = noise;
+        this.makeNoise = function() {
+            console.log(this.noise + ", " + this.noise);
+        }
+    }
+            </code></pre>
+            <p>How would you create an instance of an Animal?</p>
+            <aside class="notes"></aside>
+        </section>
+        
+    <!--Slide 22-->
+        <section>
+            <h2>Question 3</h2>
+            <p>Given the following code what is the best way to describe task?</p>
+            <pre><code class="hljs" data-trim contenteditable>
+    function TodoListItem(description) {
+        this.description = description;
+        this.isDone = false;
+        this.toString = function() {
+            return this.description;
+        }
+        this.markAsComplete = function() {
+        this.isDone = true;
+        }
+    }
+
+    var task = new TodoListItem("Do the laundry!");
+            </code></pre>
+            <p>A) A regular function</p>
+            <p>B) A constructor function</p>
+            <p>C) An instance of TodoListItem</p>
+            <aside class="notes"></aside>
+        </section>
+
+    <!--Slide 23-->
+
+        <section>
+            <h2>Whiteboard Review Exercise</h2>
+            <p>Write an object constructor for your new Social Media site that has three properties.</p>
+        </section>
+
+    <!--Slide 24-->
+
+        <section>
+            <h2>How do we add a method to a constructor?</h2>
+            <p>If we run this code over and over again (to create new instances):</p>
+            <pre><code class="hljs" data-trim contenteditable>
+function City (name, nickname) {
+    this.name = name;
+    this.nickname = nickname;
+    this.slogan = function () {
+        console.log(this.name + " is the best city in the country!");
+        };
+}
+
+var sanFrancisco = new City("San Francisco", "City By The Bay");
+            </code></pre>
+        </section>
+
+<!--Slide 25-->
+        <section>
+        <p>Every time we create an object, this code is ran, and a new anonymous function is created again and again. Your program is taking up more space in the computer’s RAM, or memory. This can lead to your applications slowing down, or even the whole browser itself.</p>
+        </section>
+
+<!--Slide 26-->
+        <section>
+            <h2>How do we add a method to a constructor?</h2>
+            <p>We can add a method onto this object constructor by using prototype.</p>
+            <p>The prototype on a constructor function is an object like an object literal. And it can be added to an object and given a function. It becomes a method.</p>
+            <pre><code class="hljs" data-trim contenteditable>
+function City (name, nickname) {
+  this.name = name;
+  this.nickname = nickname;
+}
+City.prototype.slogan = function () {
+  console.log(this.name + " is the best city in the country!");
+};
+var sanFrancisco = new City("San Francisco", "City By The Bay”);
+sanFrancisco.slogan();
+            </code></pre>
+        </section>
+
+         <!--Slide 27-->
+        <section>
+            <h2>Prototypes</h2>
+            <ul>
+                <li class="fragment">JavaScript is known as a prototypal programming language.</li>
+                <li class="fragment">Meaning, you can use prototypes as templates for objects for values and behavior to be shared between instances of objects.
+                </li>
+                <li class="fragment">So instead of the slogan method being defined for every instance when we construct one, it is shared between all instances through the template or prototype.</li>
+            </ul>
+        </section>
+         <!--Slide 28-->
+        <section>
+            <h2>Let's review this!</h2>
+            <a href="www.teaching-materials.org/jsoo/#/1">More on prototypes!</a>
+        </section>
         <!--<section>-->
             <!--<h2>Clever Quotes</h2>-->
             <!--<p>-->
