@@ -49,24 +49,35 @@
         <!--Slide 1-->
 
         <section>
-            <h2>What is Object Oriented Programming?</h2>
+            <h2>What is important about an object?</h2>
             <p>
-                Object oriented programming is a programming paradigm based on the concept of "objects", which may contain data, in the form of fields, often known as attributes or keys; and code, in the form of procedures, often known as methods.
+                An object contains state and behavior:
             </p>
+            <ul>
+                <li class="fragment"><i>state</i> aka data, properties, variables</li>
+                <li class="fragment"><i>behavior </i>aka functions, methods, messages</li>
+            </ul>
             <aside class="notes"></aside>
+
         </section>
 
         <!--Slide 2-->
+
         <section>
-            <h2>Objects</h2>
+            <h3>
+                What does this really mean? Why do we care?
+            </h3>
+            <p>
+               Objects are so great because they contain DATA and FUNCTIONALITY
+            </p>
             <ul>
-                <li class="fragment">We have used Objects for storing information and we have manipulated and accessed the data within objects.</li>
-                <li class="fragment">Remember: An object is a <strong style="color: black; background-color: white">container</strong> for values in the form of properties and <strong style="color: black; background-color: white">functionality</strong> in the form of methods.
-                </li>
-                <li class="fragment">Ex: .getElementById is a method to find a tag with the corresponding AND it is a method on the document object.</li>
+                <li class="fragment">Think of it like a radio</li>
+                <li class="fragment">A radios have properties like "made of metal", "has two button", "uses batteries"</li>
+                <li class="fragment">And it also has functionality, like "plays music"</li>
+                <li class="fragment">As programmers, we like to control both!</li>
             </ul>
             <aside class="notes"></aside>
-        </section>
+        </section> 
 
         <!--Slide 3-->
         <section>
@@ -77,7 +88,7 @@ function diceRoll() {
  var randomNumber = Math.floor(Math.random() * sides) + 1;
  console.log(randomNumber);
 }
-var dice = {}
+var dice = {};
             </code></pre>
             <aside class="notes"></aside>
         </section> 
@@ -92,7 +103,7 @@ var dice = {
    var randomNumber = Math.floor(Math.random() * sides) + 1;
    console.log(randomNumber);
  }
-}
+};
             </code></pre>
             <p>
                 Run dice.roll in the console. 
@@ -113,7 +124,7 @@ var dice = {
     var randomNumber = Math.floor(Math.random() * sides) + 1;
     console.log(randomNumber);
   }
-}
+};
             </code></pre>
             <p>
                 Run dice.roll() in the console. 
@@ -135,10 +146,11 @@ var dice = {
    var randomNumber = Math.floor(Math.random() * sides) + 1;
    console.log(randomNumber);
  }
-}
+};
             </code></pre>
             <aside class="notes"></aside>
         </section> 
+        
         <!--Slide 7-->
         
         <section>
@@ -172,16 +184,54 @@ var dice = {
             <h2>'this' keyword</h2>
             <ul>
                 <li class="fragment">JavaScript gives you, the developer, access to an extremely powerful keyword - “this”. “this” can be used to access data contextually, allowing your functions and methods to access the data that they need based on a specific context.</li>
-                <li class="fragment">The ‘this’ keyword can be used to access values, methods, and other objects on a context specific basis. (Meaning, ‘this’ changes based on where it is used.)
+                <li class="fragment">The ‘this’ keyword can be used to access values, methods, and other objects on a context specific basis.
+                </li>
+                <li class="fragment">Meaning, ‘this’ can change based on where it is used.
                 </li>
             </ul>
             <aside class="notes"></aside>
         </section>
-        
+
+        <!--Slide 9.1-->
+        <section>
+            <h2>
+                More on 'this'
+            </h2>
+            <p>
+               "this" is a magic variable that always points to the current object
+            </p>
+            <pre><code class="hljs" data-trim contenteditable>
+var circle = {
+    radius: 2
+};
+circle.circumference = function() {
+    return Math.PI * 2 * this.radius;
+}
+console.log(circle.circumference()); // 12.566370614359172
+            </code></pre>
+            <aside class="notes"></aside>
+        </section> 
+
+        <!--Slide 9.2-->  
+
+        <section>
+            <p>
+               "this" allows one function (method) to operate on many states (instances)
+            </p>
+            <pre><code class="hljs" data-trim contenteditable>
+var biggerCircle = {
+    radius: 4
+};
+biggerCircle.circumference = circle.circumference;
+console.log(biggerCircle.circumference()); // 25.132741228718345
+            </code></pre>
+            <aside class="notes"></aside>
+        </section> 
+            
         <!--Slide 10-->
         
         <section>
-
+            <h2>Another Example</h2>
             <pre><code class="hljs" data-trim contenteditable>
 var portland = {
   bridges: 12,
@@ -198,6 +248,7 @@ portland.logNumberOfBridges();
         </section> 
 
         <!--Slide 11-->
+
         <section>
             <h2>Brainstorm</h2>
             <ul>
@@ -207,7 +258,8 @@ portland.logNumberOfBridges();
             <aside class="notes"></aside>
         </section>
 
-        <!--Slide 13-->
+        <!--Slide 12-->
+
         <section>
             <h3>Object Literal vs Object Constructor</h3>
             <ul>
@@ -219,6 +271,9 @@ portland.logNumberOfBridges();
                 <li class="fragment">Calling the constructor object to create an instance is called instantiation.</li>
             </ul>
         </section>
+
+        <!--Slide 13-->
+
         <section>
             <h3>Object Literal vs Object Constructor</h3>
             <p>Object Literal</p>
@@ -240,6 +295,8 @@ function Flower(color, petals){
             </code></pre>
         </section>
 
+        <!--Slide 14-->
+
         <section>
             <p>Creating a user-defined object requires two steps:</p>
             <ol>
@@ -249,7 +306,8 @@ function Flower(color, petals){
             <aside class="notes"></aside>
         </section>
 
-        <!--Slide 14-->
+        <!--Slide 15-->
+        
         <section>
             <p>Example:</p>
             <pre><code class="hljs" data-trim contenteditable>
@@ -265,6 +323,8 @@ var myContact = new Contact('Laura', 'laura@hello.com');
             <aside class="notes"></aside>
         </section>
 
+        <!--Slide 16-->
+
         <section>
             <p>What would the name value be in myContact?</p>
             <pre><code class="hljs" data-trim contenteditable>
@@ -272,9 +332,11 @@ console.log(myContact.name);
             </code></pre>
             <aside class="notes"></aside>
         </section>
+        
+        <!--Slide 17-->
 
         <section>
-            <p>What would the name value be in myContact?</p>
+            <p>What would the name value be in myOtherContact?</p>
             <pre><code class="hljs" data-trim contenteditable>
 function Contact (name, email) {
  this.name = name;
@@ -297,6 +359,7 @@ console.log(myOtherContact.name);
             <!--</ul>-->
         <!--</section>-->
 
+        <!--Slide 18-->
         <section>
 
             <pre><code class="hljs" data-trim contenteditable>
@@ -316,14 +379,23 @@ var myContact = new Contact('Laura', 'laura@hello.com');
         <section>
             <p>Can you think of other specific times when you would need to use an object constructor?</p>
         </section>
-
-    <!--Slide 19-->
+        <section>
+          <h2>Let's Review "new"</h1>
+          <ol>
+            <li>Creates a new Object</li>
+            <li>Creates and binds a new <code>this</code> to that object</li>
+            <li>It sets this new object's <code>prototype</code> property to be the constructor function's <code>prototype</code> object</li>
+            <li>It executes the constructor function</li>
+            <li>It returns the newly created object</li>
+          </ol>
+        </section>
+        <!--Slide 19-->
 
         <section>
             <h1>QUIZ! :) </h1>
         </section>
 
-    <!--Slide 21-->
+        <!--Slide 20-->
         <section>
             <h3>Question</h3>
             <p>Given the following code: </p>
@@ -340,6 +412,7 @@ function Animal(breed, noise) {
             <aside class="notes"></aside>
         </section>
 
+        <!--Slide 21-->
         <section>
             <h3>Question</h3>
             <p>
@@ -353,7 +426,8 @@ function Animal(breed, noise) {
             <aside class="notes"></aside>
         </section>
         
-    <!--Slide 22-->
+        <!--Slide 22-->
+
         <section>
             <h2>Solution</h2>
             <pre><code class="hljs" data-trim contenteditable>
@@ -369,11 +443,15 @@ var task = new TodoListItem("Do the laundry!");
             </code></pre>
         </section>
 
+        <!--Slide 22-->
+
         <section>
             <h3>Question</h3>
             <p>What kind of objects you might need for your new Social Media site?</p>
             <p>What would be the properties on those objects?</p>
         </section>
+
+        <!--Slide 24-->
 
         <section>
             <h2>How do we add a method to a constructor?</h2>
@@ -391,14 +469,15 @@ var sanFrancisco = new City("San Francisco", "City By The Bay");
             </code></pre>
         </section>
 
-<!--Slide 25-->
+        <!--Slide 25-->
+
         <section>
         <p>Every time we create an object, this code is ran, and a new anonymous function is created again and again. Your program is taking up more space in the computer’s memory.</p>
         </section>
 
-<!--Slide 26-->
+        <!--Slide 26-->
         <section>
-            <h2>How do we add a method to a constructor?</h2>
+            <h2>Using 'prototype'!</h2>
             <p>We can add a method onto this object constructor by using prototype.</p>
             <pre><code class="hljs" data-trim contenteditable>
 function City (name, nickname) {
@@ -411,6 +490,146 @@ City.prototype.slogan = function(){
 var sanFrancisco = new City("San Francisco", "City By The Bay");
 sanFrancisco.slogan();
             </code></pre>
+        </section>
+
+        <!--Slide 27-->
+        <section>
+            <h2>
+               Another Example 
+            </h2>
+            <pre><code class="hljs" data-trim contenteditable>
+var Circle = function(radius) {
+    this.radius = radius;
+}
+Circle.prototype.circumference = function() {
+    return Math.PI * 2 * this.radius;
+}
+Circle.prototype.area = function() {
+    return Math.PI * this.radius * this.radius;
+}
+
+var circle = new Circle(2);
+circle.radius;  // this is 2; it's stored on the circle
+circle.area;    // this is a function; it's stored on Circle.prototype
+circle.area();  // this is a function call; inside it, "this" points to the circle
+            </code></pre>
+            <aside class="notes"></aside>
+        </section> 
+    
+        <section>
+          <h2>A helpful diagram</h2>
+          
+          <img src="img/bookoo_extended.png">
+          <br><br>
+          <ul style="font-size:smaller;">
+            <li>Objects can inherit properties/methods of other objects</li>
+            <li>Objects can implement parent methods in different ways</li>
+          </ul>
+
+        </section>
+
+        <!--Slide 28-->
+
+       
+
+        <!--Slide 29-->
+        <section>
+          <h2>Extending objects in JS</h2>
+          
+          <pre><code>
+// The constructor function
+function PaperBack(title, author, numPages, cover) {
+  Book.call(this, title, author, numPages);
+  this.cover = cover;
+}
+// Extending the Book object
+PaperBack.prototype = Object.create(Book.prototype);
+
+// A new method on this object
+PaperBack.prototype.burn = function() {
+  console.log("Omg, you burnt all " + this.numPages + " pages");
+  this.numPages = 0;
+}
+
+// Instantiating a new object
+var paperback = new PaperBack("1984", "George Orwell", 250, "cover.jpg");
+paperback.read();
+paperback.burn();
+         </pre></code>
+          
+        </section>
+
+        <!--Slide 30-->
+
+        <section>
+          <img src="images/book_paperback_venn.png"/>
+        </section>
+
+        <!--Slide 31-->
+
+        <section>
+          <h1>Clearer Constructors</h1>
+          
+          <pre><code>
+function Book(title, author, numPages) {
+  this.title = title;
+  this.author = author;
+  this.numPages = numPages;
+  this.currentPage = 0;
+}
+
+var book = new Book("Robot Dreams", "Isaac Asimov", 320);
+        </pre></code>
+            
+          <p>versus:</p>
+        <pre><code>
+function Book(config) {
+  this.title = config.title;
+  this.author = config.author;
+  this.numPages = config.numPages;
+  this.currentPage = 0;
+}
+
+var book = new Book({
+    title: "Robot Dreams",
+    author: "Isaac Asimov",
+    numPages: 320});
+          </pre></code>
+        </section>
+
+        <!--  Slide 32 -->
+        <section>
+          <h1>Optional Arguments</h1>
+          
+          <pre><code>
+function Book(config) {
+this.title = config.title;
+this.author = config.author;
+this.numPages = config.numPages;
+this.currentPage = 0;
+}
+
+var book = new Book({
+title: "Robot Dreams",
+author: "Isaac Asimov",
+numPages: 320
+});
+        </pre></code>
+            
+          <p>versus:</p>
+          <pre><code>
+function Book(config) {
+this.title = config.title || "Untitled";
+this.author = config.author || "Unknown";
+this.numPages = config.numPages || 100;
+this.currentPage = 0;
+}
+
+var book = new Book({
+title: "Robot Dreams",
+numPages: 320
+});
+          </pre></code>
         </section>
 
         <section style="text-align: left;">
