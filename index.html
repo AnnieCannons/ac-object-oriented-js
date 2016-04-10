@@ -49,11 +49,12 @@
         <!--Slide 1-->
 
         <section>
-            <h2>What is important about an object?</h2>
+            <h2>What is important about object oriented programming?</h2>
             <p>
-                An object contains state and behavior:
+                Software is a collection of cooperating objects rather than a collection of functions or simply a list of commands.
             </p>
             <ul>
+                <li class="fragment">An object contains state and behavior:</li>
                 <li class="fragment"><i>state</i> aka data, properties, variables</li>
                 <li class="fragment"><i>behavior </i>aka functions, methods, messages</li>
             </ul>
@@ -92,6 +93,7 @@ var dice = {};
             </code></pre>
             <aside class="notes"></aside>
         </section> 
+        
         <!--Slide 4-->
         
         <section>
@@ -180,6 +182,7 @@ var dice = {
         </section>
 
          <!--Slide 9-->
+
         <section>
             <h2>'this' keyword</h2>
             <ul>
@@ -193,12 +196,13 @@ var dice = {
         </section>
 
         <!--Slide 9.1-->
+
         <section>
             <h2>
                 More on 'this'
             </h2>
             <p>
-               "this" is a magic variable that always points to the current object
+               "this" always points to the object that it has been linked to
             </p>
             <pre><code class="hljs" data-trim contenteditable>
 var circle = {
@@ -350,16 +354,8 @@ console.log(myOtherContact.name);
             <aside class="notes">Why?</aside>
         </section>
 
-    <!--Slide 15-->
-        <!--<section>-->
-            <!--<ul>-->
-                <!--<li class="fragment">Keyword “new” turns regular function into a constructor function.</li>-->
-                <!--<li class="fragment">NOW, ‘this’ in our function means a new instance of an object. It works kind of like this:  this = {};</li>-->
-                <!--<li class="fragment">The dot notation creates the keys for the new object.</li>-->
-            <!--</ul>-->
-        <!--</section>-->
-
         <!--Slide 18-->
+
         <section>
 
             <pre><code class="hljs" data-trim contenteditable>
@@ -376,6 +372,8 @@ var myContact = new Contact('Laura', 'laura@hello.com');
             <aside class="notes"></aside>
         </section>
 
+        <!--Slide 19-->
+
         <section>
             <p>Can you think of other specific times when you would need to use an object constructor?</p>
         </section>
@@ -389,13 +387,15 @@ var myContact = new Contact('Laura', 'laura@hello.com');
             <li>It returns the newly created object</li>
           </ol>
         </section>
-        <!--Slide 19-->
+
+        <!--Slide 20-->
 
         <section>
             <h1>QUIZ! :) </h1>
         </section>
 
-        <!--Slide 20-->
+        <!--Slide 21-->
+
         <section>
             <h3>Question</h3>
             <p>Given the following code: </p>
@@ -412,7 +412,8 @@ function Animal(breed, noise) {
             <aside class="notes"></aside>
         </section>
 
-        <!--Slide 21-->
+        <!--Slide 22-->
+
         <section>
             <h3>Question</h3>
             <p>
@@ -426,7 +427,7 @@ function Animal(breed, noise) {
             <aside class="notes"></aside>
         </section>
         
-        <!--Slide 22-->
+        <!--Slide 23-->
 
         <section>
             <h2>Solution</h2>
@@ -443,7 +444,7 @@ var task = new TodoListItem("Do the laundry!");
             </code></pre>
         </section>
 
-        <!--Slide 22-->
+        <!--Slide 24-->
 
         <section>
             <h3>Question</h3>
@@ -451,7 +452,7 @@ var task = new TodoListItem("Do the laundry!");
             <p>What would be the properties on those objects?</p>
         </section>
 
-        <!--Slide 24-->
+        <!--Slide 25-->
 
         <section>
             <h2>How do we add a method to a constructor?</h2>
@@ -469,13 +470,13 @@ var sanFrancisco = new City("San Francisco", "City By The Bay");
             </code></pre>
         </section>
 
-        <!--Slide 25-->
+        <!--Slide 26-->
 
         <section>
-        <p>Every time we create an object, this code is ran, and a new anonymous function is created again and again. Your program is taking up more space in the computer’s memory.</p>
+        <p>Every time we create an object, the program runs the code, and a new anonymous function is created again and again. Your program is taking up more space in the computer’s memory.</p>
         </section>
 
-        <!--Slide 26-->
+        <!--Slide 27-->
         <section>
             <h2>Using 'prototype'!</h2>
             <p>We can add a method onto this object constructor by using prototype.</p>
@@ -492,7 +493,8 @@ sanFrancisco.slogan();
             </code></pre>
         </section>
 
-        <!--Slide 27-->
+        <!--Slide 28-->
+
         <section>
             <h2>
                Another Example 
@@ -515,10 +517,81 @@ circle.area();  // this is a function call; inside it, "this" points to the circ
             </code></pre>
             <aside class="notes"></aside>
         </section> 
+      
+        <!--Slide 29-->
+
+        <section>
+            <h2>
+                More on prototype!
+            </h2>
+            <p>A constructor function makes an object <strong>linked to </strong> its own prototype</p>
+            <pre><code class="hljs" data-trim contenteditable>
+function Greeter(who) {
+    this.me = who;
+}
+Greeter.prototype.identify = function (){
+    return "I am " + this.me;
+};
+
+var person1 = new Greeter("Alice");
+var person2 = new Greeter("Bob");
+
+person1.constructor === Greeter;
+person1.constructor === person2.constructor;
+
+            </code></pre>
+        
+            <aside class="notes"></aside>
+        </section> 
     
+        <!--Slide 30--> 
+
+        <section>
+            <h2>
+                Time for some whiteboard diagram drawing!
+            </h2>
+            <aside class="notes"></aside>
+        </section> 
+        
+        <!--Slide 30--> 
+
+        <section>
+            <h2>
+                The magic of prototype and this!
+            </h2>
+            <pre><code class="hljs" data-trim contenteditable>
+function Greeter(who) {
+    this.me = who;
+}
+Greeter.prototype.identify = function() {
+    return "I am " + this.name;
+};
+Greeter.prototype.speak = function() {
+    alert("Hello, " + this.identify() + ".");
+};
+
+var person1 = new Greeter("Alice");
+person1.speak():
+            </code></pre>
+            
+            <aside class="notes"></aside>
+        </section> 
+
+        <!--Slide 31--> 
+
+        <section>
+            <ul>
+                <li class="fragment">'this' can be thought of as "dynamic scope" (as opposed to lexical scope like global and local scope)</li>
+                <li class="fragment">'this' tells us which building to go into, or which address of the building downtown to go into</li>
+                <li class="fragment">'prototype' tells us how we are going to find properties if they don't exist on the direct object</li>
+            </ul>
+            <aside class="notes"></aside>
+        </section> 
+        
+        <!--Slide 32-->
+
         <section>
           <h2>A helpful diagram</h2>
-          
           <img src="img/bookoo_extended.png">
           <br><br>
           <ul style="font-size:smaller;">
@@ -528,14 +601,50 @@ circle.area();  // this is a function call; inside it, "this" points to the circ
 
         </section>
 
-        <!--Slide 28-->
-
-       
-
-        <!--Slide 29-->
+        <!--Slide 33-->
+ 
         <section>
-          <h2>Extending objects in JS</h2>
-          
+            <h3>How do we help our objects extend to access more methods?</h3>
+        <pre><code class="hljs" data-trim contenteditable>
+function Greeter(who) {
+    this.me = who;
+}
+Greeter.prototype.identify = function(){
+    return "I am " + this.me;
+}
+function Bar (who) {
+    Greeter.call(this,who);
+}
+Bar.prototype = Object.create(Greeter.prototype);
+
+Bar.prototype.speak = function (){
+    alert("Hello, " + this.identity() + ".");
+}
+var customer1 = new Bar ("Viola");
+var customer2 = new Bar ("Jamie");
+customer1.speak();
+            </code></pre>
+        </section> 
+
+        <!--Slide 34-->
+
+        <section>
+            <h2>
+                What just happened?
+            </h2>
+            <ul>
+                <li class="fragment">We wanted to create a child function called Bar that is supposed to inherit from or EXTEND the parent function</li>
+                <li class="fragment">aka we need Bar's prototype to extend Greeter's prototype so that Bar can link to Greeter's methods</li>
+                <li class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call">.call()</a></li>
+                <li class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create">Object.create</a></li>
+            </ul>
+            <aside class="notes"></aside>
+        </section> 
+            
+        <!--Slide 34-->
+
+        <section>
+          <h2>Another example</h2> 
           <pre><code>
 // The constructor function
 function PaperBack(title, author, numPages, cover) {
@@ -550,25 +659,32 @@ PaperBack.prototype.burn = function() {
   console.log("Omg, you burnt all " + this.numPages + " pages");
   this.numPages = 0;
 }
-
 // Instantiating a new object
 var paperback = new PaperBack("1984", "George Orwell", 250, "cover.jpg");
 paperback.read();
 paperback.burn();
-         </pre></code>
-          
+            </pre></code>
         </section>
 
-        <!--Slide 30-->
+        <!--Slide 34-->
 
         <section>
-          <img src="images/book_paperback_venn.png"/>
+          <img src="img/book_paperback_venn.png"/>
         </section>
 
-        <!--Slide 31-->
+        <!--Slide 35-->
 
         <section>
-          <h1>Clearer Constructors</h1>
+            <h2>
+                Exercise!
+            </h2>
+            
+        </section> 
+    
+        <!--Slide 36-->
+
+        <section>
+          <h2>Clearer Constructors</h2>
           
           <pre><code>
 function Book(title, author, numPages) {
@@ -597,9 +713,9 @@ var book = new Book({
           </pre></code>
         </section>
 
-        <!--  Slide 32 -->
+        <!--  Slide 37 -->
         <section>
-          <h1>Optional Arguments</h1>
+          <h2>Optional Arguments</h2>
           
           <pre><code>
 function Book(config) {
@@ -631,6 +747,8 @@ numPages: 320
 });
           </pre></code>
         </section>
+            
+        <!--  Slide 38 -->
 
         <section style="text-align: left;">
             <h1>THE END</h1>
