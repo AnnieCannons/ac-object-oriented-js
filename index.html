@@ -50,9 +50,7 @@
 
         <section>
             <h2>What is important about object oriented programming?</h2>
-            <p>
-                Software is a collection of cooperating objects rather than a collection of functions or simply a list of commands.
-            </p>
+            <p>Software is a collection of cooperating objects rather than a collection of functions or simply a list of commands.</p>
             <ul>
                 <li class="fragment">An object contains state and behavior:</li>
                 <li class="fragment"><i>state</i> aka data, properties, variables</li>
@@ -65,12 +63,8 @@
         <!--Slide 2-->
 
         <section>
-            <h3>
-                What does this really mean? Why do we care?
-            </h3>
-            <p>
-               Objects are so great because they contain DATA and FUNCTIONALITY
-            </p>
+            <h3>What does this really mean? Why do we care?</h3>
+            <p>Objects are so great because they contain DATA and FUNCTIONALITY</p>
             <ul>
                 <li class="fragment">Think of it like a radio</li>
                 <li class="fragment">A radios have properties like "made of metal", "has two button", "uses batteries"</li>
@@ -79,6 +73,15 @@
             </ul>
             <aside class="notes"></aside>
         </section> 
+
+        <section>
+            <h2>Objects</h2>
+            <ul>
+                <li class="fragment">We have used Objects for storing information and we manipulated and accessed the data within objects.</li>
+                <li class="fragment">Remember: An object is a container for values in the form of properties and functionality in the form of methods.</li>
+                <li class="fragment">Ex: .getElementById is a method to find an h1 tag with the ID of header. .getElementById is a method on the document object.</li>
+            </ul>
+        </section>
 
         <!--Slide 3-->
         <section>
@@ -89,7 +92,10 @@ function diceRoll() {
  var randomNumber = Math.floor(Math.random() * sides) + 1;
  console.log(randomNumber);
 }
-var dice = {};
+var dice = {
+
+
+};
             </code></pre>
             <aside class="notes"></aside>
         </section> 
@@ -176,7 +182,7 @@ var dice = {
         <section>
             <h2>Remember Scope?</h2>
             <p>
-                <a href="www.teaching-materials.org/jsreview/#/30">Refresh your memory here!</a>
+                <a href="http://www.teaching-materials.org/jsreview/#/30">Refresh your memory here!</a>
             </p>
             <aside class="notes"></aside>
         </section>
@@ -265,10 +271,15 @@ portland.logNumberOfBridges();
         <!--Slide 12-->
 
         <section>
-            <h3>Object Literal vs Object Constructor</h3>
+            <h2>Object Literal vs Object Constructor</h2>
             <ul>
                 <li class="fragment">Object literals defines an object literally: var myDog = {name: 'coach', age: '1'}</li>
+                <li class="fragment">Object literals aren't the only way to create objects. If you're making a lot of similar objects you can use a constructor function to generate new objects of the same kind.</li>
+                <li class="fragment">Object literals are great for one off objects or passing values to a function, but if you want to create multiple objects of the same kind or type, you'll need to use constructor functions.</li>
             </ul>
+        </section> 
+         <section>
+             <h2>Object Constructor Properties </h2>
             <ul>
                 <li class="fragment">Describes how an object should be created (example: dog).</li>
                 <li class="fragment">Each object created is known as an instance of that object type (example: coach).</li>
@@ -389,10 +400,6 @@ var myContact = new Contact('Laura', 'laura@hello.com');
         </section>
 
         <!--Slide 20-->
-
-        <section>
-            <h1>QUIZ! :) </h1>
-        </section>
 
         <!--Slide 21-->
 
@@ -645,7 +652,7 @@ customer1.speak();
 
         <section>
           <h2>Another example</h2> 
-          <pre><code>
+          <pre><code class="hljs" data-trim contenteditable>
 // The constructor function
 function PaperBack(title, author, numPages, cover) {
   Book.call(this, title, author, numPages);
@@ -676,7 +683,7 @@ paperback.burn();
 
         <section>
             <h2>
-                <a href="http://www.teaching-materials.org/jsoo/exercise_extend.html">Exercise!</a>
+                <a href="http://www.teaching-materials.org/jsoo/exercise_oo.html">Exercise!</a>
             </h2>
             
         </section> 
@@ -685,8 +692,7 @@ paperback.burn();
 
         <section>
           <h2>Clearer Constructors</h2>
-          
-          <pre><code>
+          <pre><code class="hljs" data-trim contenteditable>
 function Book(title, author, numPages) {
   this.title = title;
   this.author = author;
@@ -698,7 +704,7 @@ var book = new Book("Robot Dreams", "Isaac Asimov", 320);
         </pre></code>
             
           <p>versus:</p>
-        <pre><code>
+        <pre><code class="hljs" data-trim contenteditable>
 function Book(config) {
   this.title = config.title;
   this.author = config.author;
@@ -716,8 +722,7 @@ var book = new Book({
         <!--  Slide 37 -->
         <section>
           <h2>Optional Arguments</h2>
-          
-          <pre><code>
+          <pre><code class="hljs" data-trim contenteditable>
 function Book(config) {
 this.title = config.title;
 this.author = config.author;
@@ -733,7 +738,7 @@ numPages: 320
         </pre></code>
             
           <p>versus:</p>
-          <pre><code>
+          <pre><code class="hljs" data-trim contenteditable>
 function Book(config) {
 this.title = config.title || "Untitled";
 this.author = config.author || "Unknown";
@@ -746,6 +751,116 @@ title: "Robot Dreams",
 numPages: 320
 });
           </pre></code>
+        </section>
+
+        <section>
+            <h2>Lexical Scope</h2>
+            <pre><code class="hljs" data-trim contenteditable>
+function init() {
+    var name = "Mozilla"; //name is a local variable created by init
+    function displayName() { //displayName() is the inner function, a closure
+        alert(name);
+    }
+    displayName();
+}
+init();
+        </code></pre>
+        </section>
+
+        <section>
+            <h2>Remember Scopes?</h2>
+            <p>This is an example of lexical scoping: in JavaScript, the scope of a variabe is defined by its  location within the source code (it is apprent lexically) and nested functions have asccess to varible declared in their outer scope.</p>
+            <p>We have covered this: it is global and local!</p>
+        </section>
+
+        <section>
+            <h2>Introduction to closures!</h2>
+            <p>A closure is created when an inner function is makde accessible from outside of the function that created it. This typically occurs when an outer unction returns an inner function. When this happens, the inner function matins a reference to the environment in which it was created.</p>
+            <p>This means that it remembers all of the variables (and their values) that were in scope at the time.</p>
+        </section>
+
+        <section>
+            <h2>Let's talk about this function</h2>
+            <pre><code class="hljs" data-trim contenteditable>
+function sayHello(name){
+    var text = 'Hello ' + name;
+    var say = function() {
+        console.log(text)
+        say();
+    }
+}
+        </code></pre>
+        </section>
+
+        <section>
+            <h2>Let's talk about this function</h2>
+            <pre><code class="hljs" data-trim contenteditable>
+function sayHello2(name){
+    var text = 'Hello ' + name; //Local variable
+    var say = function() {
+        console.log(text)
+    }
+    return say;
+}
+var say2 = sayHello2('Bob');
+say2(); // logs "Hello Bob"
+        </code></pre>
+        </section>
+
+        <section>
+            <h2>Scopes and Closures</h2>
+            <pre><code class="hljs" data-trim contenteditable>
+function add(value1){
+    return function doAdd(value2){
+        return value1 + value2;
+    };
+}
+
+var increment = add(1);
+var foo = increment(2);
+//foo equal 3
+        </code></pre>  
+            <p>The add() function returns its inner function doAdd(). By returning a reference to an inner function, a closure is created.</p>
+        </section>
+
+        <section>
+            <h2>Scopes and Closures</h2>
+            <p>Things to Remember</p>
+            <ul>
+                <li>The previous code has a closure because the anonymous function is declared inside another function. In JS, if you use the function keyword inside another function, you are creating a closure.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Scopes and Closures</h2>
+            <pre><code class="hljs" data-trim contenteditable>
+function say667() {
+    //Local variable that ends up within closure
+    var num = 666;
+    var say = function() {
+        console.log(num);
+    }
+    num++;
+    return say;
+}
+var sayNumber = say667();
+sayNumber();
+        </code></pre>
+        </section>
+
+               <section>
+            <h2>Scopes and Closures</h2>
+            <pre><code class="hljs" data-trim contenteditable>
+function nameAdder(x){
+    return function(y){
+        return x + y;
+    };
+}
+
+var add5 = makeAdder(5);
+var add10 = makeAdder(10);
+        </code></pre>
+        <p>Console log these variables</p>
         </section>
             
         <!--  Slide 38 -->
