@@ -244,11 +244,12 @@ console.log(biggerCircle.circumference()); // 25.132741228718345
             <h2>Another Example</h2>
             <pre><code class="hljs" data-trim contenteditable>
 var portland = {
+  name: "Portland",
   bridges: 12,
   airport: 1,
   soccerTeams: 1,
   logNumberOfBridges: function () {
-    console.log (“There are “ + this.bridges + “ bridges in Portland”)
+    console.log (“There are “ + this.bridges + “ bridges in ” + this.name);
   }
 }
 
@@ -303,7 +304,7 @@ var flower = {
  color : "red",
  petals : 32,
  smellsPretty : true
-}
+};
             </code></pre>
 
             <p>Constructor Object</p>
@@ -383,7 +384,7 @@ var myContact = new Contact('Laura', 'laura@hello.com');
                 <li class="fragment">And returns a new <b>instance</b> of the Contact object, myContact.</li>
                 <li class="fragment">This is called <b>instantiation</b>.</li>
             </ul>
-            <p>
+            <p class="fragment">
                 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new" target="_blank">Read more...</a>
             </p>
             <aside class="notes"></aside>
@@ -413,8 +414,8 @@ var myContact = new Contact('Laura', 'laura@hello.com');
             <h3>Question</h3>
             <p>Given the following code: </p>
             <pre><code class="hljs" data-trim contenteditable>
-function Animal(breed, noise) {
-  this.breed = breed;
+function Animal(species, noise) {
+  this.species = species;
   this.noise = noise;
   this.makeNoise = function() {
     console.log(this.noise + ", " + this.noise);
