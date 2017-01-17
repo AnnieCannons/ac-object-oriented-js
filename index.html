@@ -692,72 +692,13 @@ paperback.burn();
             <h2>
                 <a href="http://www.teaching-materials.org/jsoo/exercise_oo.html">Exercise!</a>
             </h2>
-            
         </section> 
     
         <!--Slide 36-->
 
-        <section>
-          <h2>Clearer Constructors</h2>
-          <pre><code class="hljs" data-trim contenteditable>
-function Book(title, author, numPages) {
-  this.title = title;
-  this.author = author;
-  this.numPages = numPages;
-  this.currentPage = 0;
-}
-
-var book = new Book("Robot Dreams", "Isaac Asimov", 320);
-        </pre></code>
-            
-          <p>versus:</p>
-        <pre><code class="hljs" data-trim contenteditable>
-function Book(config) {
-  this.title = config.title;
-  this.author = config.author;
-  this.numPages = config.numPages;
-  this.currentPage = 0;
-}
-
-var book = new Book({
-    title: "Robot Dreams",
-    author: "Isaac Asimov",
-    numPages: 320});
-          </pre></code>
-        </section>
-
-        <!--  Slide 37 -->
-        <section>
-          <h2>Optional Arguments</h2>
-          <pre><code class="hljs" data-trim contenteditable>
-function Book(config) {
-this.title = config.title;
-this.author = config.author;
-this.numPages = config.numPages;
-this.currentPage = 0;
-}
-
-var book = new Book({
-title: "Robot Dreams",
-author: "Isaac Asimov",
-numPages: 320
-});
-        </pre></code>
-            
-          <p>versus:</p>
-          <pre><code class="hljs" data-trim contenteditable>
-function Book(config) {
-this.title = config.title || "Untitled";
-this.author = config.author || "Unknown";
-this.numPages = config.numPages || 100;
-this.currentPage = 0;
-}
-
-var book = new Book({
-title: "Robot Dreams",
-numPages: 320
-});
-          </pre></code>
+        <section>   
+            <h2>Review Exercise</h2>
+            <p><a href="https://www.freecodecamp.com/challenges/declare-javascript-objects-as-variables">FreeCodeCamp</a></p>
         </section>
 
         <section>
@@ -776,14 +717,26 @@ init();
 
         <section>
             <h2>Remember Scopes?</h2>
-            <p>This is an example of lexical scoping: in JavaScript, the scope of a variabe is defined by its  location within the source code (it is apprent lexically) and nested functions have asccess to varible declared in their outer scope.</p>
+            <p>This is an example of lexical scoping: in JavaScript, the scope of a variabe is defined by its location within the source code (it is apparent lexically) and nested functions have access to variable declared in their outer scope.</p>
             <p>We have covered this: it is global and local!</p>
         </section>
 
         <section>
             <h2>Introduction to closures!</h2>
-            <p>A closure is created when an inner function is makde accessible from outside of the function that created it. This typically occurs when an outer unction returns an inner function. When this happens, the inner function matins a reference to the environment in which it was created.</p>
+            <p>A closure is created when an inner function is made accessible from outside of the function that created it. This typically occurs when an outer function returns an inner function. When this happens, the inner function maintains a reference to the environment in which it was created.</p>
             <p>This means that it remembers all of the variables (and their values) that were in scope at the time.</p>
+        </section>
+
+        <section>   
+            <h2>Let's read through this document</h2>
+            <p><a href="https://medium.freecodecamp.com/lets-learn-javascript-closures-66feb44f6a44#.sh60kj2ai">Click here</a></p>
+        </section>
+
+        <section>
+            <h2>Scopes and Closures</h2>
+            <p>Our friend Kyle Simpson</p>
+            <p><a href="https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md">Textbook</a></p>
+            <p><a href="https://www.youtube.com/watch?v=nRZri_CHqnA">Video</a></p>
         </section>
 
         <section>
