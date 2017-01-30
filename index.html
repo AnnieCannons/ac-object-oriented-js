@@ -822,6 +822,31 @@ var add10 = makeAdder(10);
         </code></pre>
         <p>Console log these variables</p>
         </section>
+
+        <section>
+            <h2>Review the Recipe</h2>
+            <img src="img/recipe.png" alt="">
+        </section>
+
+        <section>
+            <h2>Closures with Objects</h2>
+            <p>This also works if you are returning an object with methods.</p>
+<pre><code class="hljs" data-trim contenteditable>
+function counter() {
+    var n = 0;
+    return {
+        count: function() { return ++n; };
+        reset: function() { return n = 0; };
+    };
+}
+var myCounter = counter();
+</code></pre>
+        </section>
+
+        <section>
+            <h2>Closures with Objects</h2>
+            <img src="img/object.png" alt="">
+        </section>
             
         <!--  Slide 38 -->
 
