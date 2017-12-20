@@ -514,7 +514,7 @@ sanFrancisco.slogan();
                Another Example 
             </h2>
             <pre><code class="hljs" data-trim contenteditable>
-var Circle = function(radius) {
+function Circle(radius) {
     this.radius = radius;
 }
 Circle.prototype.circumference = function() {
@@ -746,8 +746,8 @@ function sayHello(name){
     var text = 'Hello ' + name;
     var say = function() {
         console.log(text)
-        say();
     }
+    say();
 }
         </code></pre>
         </section>
