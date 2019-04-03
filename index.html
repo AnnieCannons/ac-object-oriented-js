@@ -49,35 +49,85 @@
         <!--Slide 1-->
 
         <section>
+            <h2>Important Note</h2>
+            <p class="fragment">JavaScript is not really an object-oriented language (it is so much more!), but it has properties that helps it to operate like one. Objects are still critically important.</p>
+        </section>
+
+        <section>
+            <h2>Formal Definitions of JS</h2>
+            <p class="fragment">JavaScript is a <span style="color:coral">high-level</span>, <span style="color:yellow">interpreted</span> programming language. It is a programming language that is characterized as <span style="color:pink">weakly typed</span>, and prototype-based. </p>
+            <p class="fragment">JavaScript supports <span style="color:wheat">event-driven</span>, functional, and imperative <span style="color:lightblue">(including object-oriented and prototype-based)</span> programming styles.</p>
+            <img class="fragment" src="img/confused.gif" alt="Confused Gif">
+        </section>
+
+        <section>
+            <h2>Let's Break it down</h2>
+            <img src="img/breakitdown.gif" alt="Babies Break dancing">
+        </section>
+
+        <section>
+            <h2>Take a look at terms</h2>
+            <p style="color:yellow">High-Level</p>
+            <ul>
+                <li class="fragment">A programming language that is easy for a developer to understand.</li>
+                <li class="fragment">More readable for a human and less like "machine code" or binary.</li>
+                <li class="fragment">The language is good for developers but has to be translated for computers.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Take a look at terms</h2>
+            <p style="color:yellow">Interpreted</p>
+            <ul>
+                <li class="fragment">The JavaScript engine is an interpreter that interprets JavaScript source code and executes the script accordingly.</li>
+                <li class="fragment">JavaScript is also complied as it takes two "passes" through the code.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Take a look at terms</h2>
+            <p style="color:yellow">Weakly-typed</p>
+            <ul>
+                <li class="fragment">In JavaScript, you don't have to declare the data type of a variable when you create the variable. You do in other languages!</li>
+                <li class="fragment">You can change a variable's stored data type. For example, var x = "Laura" and then later, you can run x = 3. You ahve changed the type, but JavaScript doesn't mind!</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Take a look at terms</h2>
+            <p style="color:yellow">Event-driven</p>
+            <ul>
+                <li class="fragment">Event-driven programming is a programming paradigm in which the flow of the program is determined by events such as user actions (mouse clicks, key presses), sensor outputs, or messages from other programs or threads. </li>
+                <li class="fragment">This is so important for JS as it is the only programming language in the front-end for the web!</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Take a look at terms</h2>
+            <p style="color:yellow">Prototype-based and Object-Oriented</p>
+            <p>This is what we will be covering in this unit!</p>
+        </section>
+
+        <section>
             <h2>What is important about object oriented programming?</h2>
             <p>Software is a collection of cooperating objects rather than a collection of functions or simply a list of commands.</p>
             <ul>
                 <li class="fragment">An object contains state and behavior:</li>
                 <li class="fragment"><i>state</i> aka data, properties, variables</li>
                 <li class="fragment"><i>behavior </i>aka functions, methods, messages</li>
-            </ul>
-            <aside class="notes"></aside>
-
+            </ul>    
         </section>
-
-        <!--Slide 2-->
-
-        <section>
-            <h3>What does this really mean? Why do we care?</h3>
-            <p>Objects are so great because they contain DATA and FUNCTIONALITY</p>
-            <ul>
-                <li class="fragment">Think of it like a radio</li>
-                <li class="fragment">A radios have properties like "made of metal", "has two button", "uses batteries"</li>
-                <li class="fragment">And it also has functionality, like "plays music"</li>
-                <li class="fragment">As programmers, we like to control both!</li>
-            </ul>
-            <aside class="notes"></aside>
-        </section> 
-
-        <section>
-            <h2>SideNote</h2>
-            <p>JavaScript is really an object-oriented language, but it has properties that helps it to operate like one. Objects are still critically important</p>
-        </section>
+        
+            <section>
+                <h3>What does this really mean? Why do we care?</h3>
+                <p>Objects are so great because they contain DATA and FUNCTIONALITY</p>
+                <ul>
+                    <li class="fragment">Think of it like a radio</li>
+                    <li class="fragment">A radios have properties like "made of metal", "has two button", "uses batteries"</li>
+                    <li class="fragment">And it also has functionality, like "plays music"</li>
+                    <li class="fragment">As programmers, we like to control both!</li>
+                </ul>
+            </section> 
 
         <section>
             <h2>Objects</h2>
@@ -187,7 +237,7 @@ var dice = {
         <section>
             <h2>Remember Scope?</h2>
             <p>
-                <a href="http://www.teaching-materials.org/jsreview/#/30">Refresh your memory here!</a>
+                <a href="https://anniecannons.github.io/ac-intro-js-functions/#/33">Refresh your memory here!</a>
             </p>
             <aside class="notes"></aside>
         </section>
@@ -267,6 +317,21 @@ portland.logNumberOfBridges();
             <h2>'this'</h2>
             <p><code>this</code> is an identifier that gets a value bound to it, much like a variable.</p>
             <p>But instead of identifiying the values explicitly in your code, <code>this</code> gets bound to the correct object automatically.</p>
+        </section>
+
+        <section>
+            <h2>What is the output of this code?</h2>
+<pre><code>
+var person = {
+    firstName: "Penelope",
+    lastName: "Barrymore",
+    getName: function () {
+        return this.firstName + " " + this.lastName;
+    }
+}
+
+console.log(person.getName())
+</code></pre>
         </section>
 
         <!--Slide 11-->
@@ -434,7 +499,7 @@ function Animal(species, noise) {
         <!--Slide 22-->
 
         <section>
-            <h3>Question</h3>
+            <h3>Todo List Exercise</h3>
             <p>
                 How would you describe a task in a todo list. Your task should have:
             </p>
@@ -443,7 +508,7 @@ function Animal(species, noise) {
                 <li>An attribute to define if the task is done.</li>
                 <li>A method to call when it is done.</li>
             </ul>
-            <aside class="notes"></aside>
+            <img src="img/exercise.gif" alt="Exercise Time">
         </section>
         
         <!--Slide 23-->
@@ -571,6 +636,10 @@ person1.constructor === person2.constructor;
             </h2>
             <aside class="notes"></aside>
         </section> 
+
+        <section>
+            <img src="img/prototypes-animal-dog.jpg" alt="Prototype Chain">
+        </section>
         
         <!--Slide 30--> 
 
@@ -629,7 +698,7 @@ function Greeter(who) {
 Greeter.prototype.identify = function(){
     return "I am " + this.me;
 }
-function Bar (who) {
+function Bar(who) {
     Greeter.call(this,who);
 }
 Bar.prototype = Object.create(Greeter.prototype);
@@ -637,8 +706,8 @@ Bar.prototype = Object.create(Greeter.prototype);
 Bar.prototype.speak = function (){
     alert("Hello, " + this.identity() + ".");
 }
-var customer1 = new Bar ("Viola");
-var customer2 = new Bar ("Jamie");
+var customer1 = new Bar("Viola");
+var customer2 = new Bar("Jamie");
 customer1.speak();
             </code></pre>
         </section> 
@@ -692,9 +761,9 @@ paperback.burn();
         <!--Slide 35-->
 
         <section>
-            <h2>
-                <a href="http://www.teaching-materials.org/jsoo/exercise_oo.html">Exercise!</a>
-            </h2>
+            <h2>Video Exercise</h2>
+            <p>Click <a href="http://www.teaching-materials.org/jsoo/exercise_oo.html">here!</a></p>
+            <img src="img/exercise.gif" alt="Exercise Time">
         </section> 
     
         <!--Slide 36-->
@@ -702,10 +771,15 @@ paperback.burn();
         <section>   
             <h2>Review Exercise</h2>
             <p><a href="https://www.freecodecamp.com/challenges/declare-javascript-objects-as-variables">FreeCodeCamp</a></p>
+            <img src="img/exercise.gif" alt="Exercise Time">
+
         </section>
 
-        
-            
+        <section>
+            <h2>Exercise: eFarmony</h2>
+            <p>Click <a href="https://github.com/tahoeRobbo/eFarmony">here</a> and do in Visual Studio Code</p>
+            <img src="img/exercise.gif" alt="Exercise Time">
+        </section>
         <!--  Slide 38 -->
 
         <section style="text-align: left;">
