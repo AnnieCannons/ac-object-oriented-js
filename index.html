@@ -134,23 +134,27 @@
             <ul>
                 <li class="fragment">We have used Objects for storing information and we manipulated and accessed the data within objects.</li>
                 <li class="fragment">Remember: An object is a container for values in the form of properties and functionality in the form of methods.</li>
-                <li class="fragment">Ex: .getElementById is a method to find an h1 tag with the ID of header. .getElementById is a method on the document object.</li>
+<pre class="fragment"><code class="js" data-trim contenteditable>
+//Examples of an object
+var dice = {
+    sides: 6,
+    color: "green"  
+};
+</code></pre>
             </ul>
         </section>
 
         <!--Slide 3-->
         <section>
             <h2>Adding Methods to Objects</h2>
-            <pre><code class="hljs" data-trim contenteditable>
+            <pre><code class="js" data-trim contenteditable>
+//This is an example of a function
+//We can take this function and make it a method in our object
 function diceRoll() {
  var sides = 6;
  var randomNumber = Math.floor(Math.random() * sides) + 1;
  console.log(randomNumber);
 }
-var dice = {
-
-
-};
             </code></pre>
             <aside class="notes"></aside>
         </section> 
@@ -161,7 +165,7 @@ var dice = {
             <h2>Adding Methods to Objects</h2>
             <pre><code class="hljs" data-trim contenteditable>
 var dice = {
- roll: function diceRoll() {
+ roll: function() {
    var sides = 6;
    var randomNumber = Math.floor(Math.random() * sides) + 1;
    console.log(randomNumber);
@@ -169,11 +173,8 @@ var dice = {
 };
             </code></pre>
             <p>
-                Run dice.roll in the console. 
+                Run dice.roll in the console. How do we execute the function?
             </p>
-            <aside class="notes">
-                How do we call the dice.roll function?
-            </aside>
         </section> 
         
         <!--Slide 5-->
@@ -221,7 +222,7 @@ var dice = {
 var dice = {
  sides: 6,
  roll: function() {
-  var randomNumber = Math.floor(Math.random() *   dice.sides) + 1;
+  var randomNumber = Math.floor(Math.random() * dice.sides) + 1;
   console.log(randomNumber);
  }
 };
@@ -232,14 +233,25 @@ var dice = {
             <aside class="notes"></aside>
         </section> 
 
+        <section>
+            <h2>Sharing Methods</h2>
+            <p>Sometimes, you want to be able to share methods between objects. For example, you could have 200 user objects for your app. All of your users should be able to 'add a profile picture'. Wouldn't it be nice if addProfilePic method could be used by all of the objects?</p>
+        </section>
+
         <!--Slide 8-->
 
         <section>
             <h2>Remember Scope?</h2>
+            <p>Functions can access the variables that are located locally within their scope.</p>
             <p>
                 <a href="https://anniecannons.github.io/ac-intro-js-functions/#/33">Refresh your memory here!</a>
             </p>
             <aside class="notes"></aside>
+        </section>
+
+        <section>
+            <h2>Scope</h2>
+            <p>So far, we have talked about lexical scope (global and local scope). This scope references where something was defined. Now we are going to talk about <scan style="color: yellow;">dynamic scope</scan>. This is a type of scope that is based on  context.</p>
         </section>
 
          <!--Slide 9-->
@@ -265,14 +277,15 @@ var dice = {
             <p>
                "this" always points to the object that it has been linked to
             </p>
-            <pre><code class="hljs" data-trim contenteditable>
+            <pre><code class="js" data-trim contenteditable>
 var circle = {
     radius: 2
-};
-circle.circumference = function() {
-    return Math.PI * 2 * this.radius;
+    circumference: function() {
+        return Math.PI * 2 * this.radius;
+    }
 }
 console.log(circle.circumference()); // 12.566370614359172
+//'this' is referring to 'circle'
             </code></pre>
             <aside class="notes"></aside>
         </section> 
@@ -283,12 +296,13 @@ console.log(circle.circumference()); // 12.566370614359172
             <p>
                "this" allows one function (method) to operate on many states (instances)
             </p>
-            <pre><code class="hljs" data-trim contenteditable>
+            <pre><code class="js" data-trim contenteditable>
 var biggerCircle = {
     radius: 4
 };
 biggerCircle.circumference = circle.circumference;
 console.log(biggerCircle.circumference()); // 25.132741228718345
+//What is happening above?
             </code></pre>
             <aside class="notes"></aside>
         </section> 
@@ -350,7 +364,14 @@ console.log(person.getName())
         <section>
             <h2>Object Literal vs Object Constructor</h2>
             <ul>
-                <li class="fragment">Object literals defines an object literally: var myDog = {name: 'coach', age: '1'}</li>
+                <li class="fragment">Object literals defines an object literally:</li>
+                <pre class="fragment"><code>
+var myDog = {
+    name: 'coach', 
+    age: '1'
+}
+                </code></pre>
+
                 <li class="fragment">Object literals aren't the only way to create objects. If you're making a lot of similar objects you can use a constructor function to generate new objects of the same kind.</li>
                 <li class="fragment">Object literals are great for one off objects or passing values to a function, but if you want to create multiple objects of the same kind or type, you'll need to use constructor functions.</li>
             </ul>
@@ -378,12 +399,13 @@ var flower = {
             </code></pre>
 
             <p>Constructor Object</p>
-            <pre><code class="hljs" data-trim contenteditable>
-function Flower(color, petals){
+            <pre><code class="js" data-trim contenteditable>
+function Flower(color, petals, smell){
  this.color = color;
  this.petals = petals;
- this.smellsPretty = true;
+ this.smellsPretty = smell;
 }
+var myNewFlower = new Flower('red', 32, true);
             </code></pre>
         </section>
 
@@ -770,7 +792,7 @@ paperback.burn();
 
         <section>   
             <h2>Review Exercise</h2>
-            <p><a href="https://www.freecodecamp.com/challenges/declare-javascript-objects-as-variables">FreeCodeCamp</a></p>
+            <p><a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/object-oriented-programming/">FreeCodeCamp</a></p>
             <img src="img/exercise.gif" alt="Exercise Time">
 
         </section>
