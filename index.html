@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>AnnieCannons slides</title>
+    <title>AnnieCannons Object Oriented JavaScript slides</title>
 
     <meta name="description" content="AnnieCannons class slides">
     <meta name="author" content="AnnieCannons">
@@ -15,6 +15,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
+    <link rel="icon" type="image/png" href="img/AC_Asterisk.png">
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/league.css" id="theme">
 
@@ -45,82 +46,224 @@
         <!--Introduction slide-->
         <section>
             <h1>Object Oriented JavaScript</h1>
-            <h3></h3>
-            <p>
-
-            </p>
         </section>
         <!--Slide 1-->
 
         <section>
-            <h2>What is Object Oriented Programming?</h2>
-            <p>
-                Object oriented programming is a programming paradigm based on the concept of "objects", which may contain data, in the form of fields, often known as attributes or keys; and code, in the form of procedures, often known as methods.
-            </p>
-            <aside class="notes"></aside>
+            <h2>Object Oriented JavaScript<br>Review Study Guide</h2>
+            <p>Click <a href="https://docs.google.com/document/d/1U1YQiP0fzAbn7Tkhk-7WBNuFAvwZ61DkpDhi1SACmCM/edit?usp=sharing" target="_blank">here</a> to view and make a copy for reference.</p>
         </section>
 
-        <!--Slide 2-->
+        <section>
+            <h2>What is Object Oriented JavaScript?</h2>
+            <p>Let's break down those words by first reviewing objects.</p>
+            <p>What is an <span style="color: yellow;">object</span>? <span class="fragment">An object stores a lot of info about a thing.</span></p>
+            <p class="fragment">What kind of info does an object have? <span class="fragment">It has <span style="color: yellow;">keys</span> and <span style="color: yellow;">values</span>.</span></p>
+            <p class="fragment">Give an example of an object below.</p>
+<pre class="fragment"><code class="js" data-trim contenteditable>
+//Type here
+
+</code></pre>
+            <p class="fragment">Objects form the basis of object oriented JavaScript. </p>
+        </section>
+
+        <section>
+            <h2>Object Oriented JavaScript: Overview</h2>
+            <p>Up to this point in time, we have explored how objects contain data, properties, and/or variables. We will build on this foundation.</p>
+            <p>In this unit, we will explore:</p>
+            <ul>
+                <li>state and behavior</li>
+                <li>object constructors</li>
+                <li>dynamic scope</li>
+                <li>prototype and inheritance</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Important Note</h2>
+            <p class="fragment">JavaScript is not really an object-oriented language (it is so much more!), but it has properties that helps it to operate like one. Objects are still critically important.</p>
+        </section>
+
+        <section>
+            <h2>Formal Definitions of JS</h2>
+            <p>We've reviewed the word "object" in Object Oriented JavaScript. Now let's take a closer look at JavaScript!</p>
+            <p class="fragment">JavaScript is a <span style="color:coral">high-level</span>, <span style="color:yellow">interpreted</span> programming language. It is a programming language that is characterized as <span style="color:pink">weakly typed</span>, and prototype-based. </p>
+            <p class="fragment">JavaScript supports <span style="color:wheat">event-driven</span>, functional, and imperative <span style="color:lightblue">(including object-oriented and prototype-based)</span> programming styles.</p>
+            <img class="fragment" width="200px" src="img/confused.gif" alt="Confused Gif">
+        </section>
+
+        <section>
+            <h2>Let's Break it down</h2>
+            <img src="img/breakitdown.gif" alt="Babies Break dancing">
+        </section>
+
+        <section>
+            <h2>Take a look at terms</h2>
+            <p style="color:yellow">High-Level</p>
+            <ul>
+                <li class="fragment">A programming language that is easy for a developer to understand.</li>
+                <li class="fragment">More readable for a human and less like "machine code" or binary.</li>
+                <li class="fragment">The language is good for developers but has to be translated for computers.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Take a look at terms</h2>
+            <p style="color:yellow">Interpreted</p>
+            <ul>
+                <li class="fragment">The JavaScript engine is an interpreter that interprets JavaScript source code and executes the script accordingly.</li>
+                <li class="fragment">JavaScript is also compiled as it takes two "passes" through the code.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Take a look at terms</h2>
+            <p style="color:yellow">Weakly-typed</p>
+            <ul>
+                <li class="fragment">In JavaScript, you don't have to declare the data type of a variable when you create the variable. <code style="color:aqua;">var x;</code> You do in other languages! In Swift, for example: <code style="color:aqua;">var x: String</code></li>
+                <li class="fragment">In JavaScript, you can also change a variable's stored data type. For example, <code style="color:aqua;">var x = "Laura"</code> and then later, you can run <code style="color:aqua;">x = 3</code>. You have changed the type, but JavaScript does not mind!</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Take a look at terms</h2>
+            <p style="color:yellow">Event-driven</p>
+            <ul>
+                <li class="fragment">Event-driven programming is a programming paradigm in which the flow of the program is determined by events.</li>
+                <li class="fragment">Events include user actions (mouse clicks, key presses), sensor outputs, or messages from other programs or threads. </li>
+                <li class="fragment">This is so important for JavaScript as it is the only programming language in the front-end for the web!</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Take a look at terms</h2>
+            <p style="color:yellow">Object-Oriented and Prototype-based</p>
+            <ul>
+                <li class="fragment">Object-oriented programming is a programming paradigm based on objects, their properties and methods.</li>
+                <li class="fragment">Protoype-based programming permits reuse of methods from objects based as prototypes.</li>
+                <li class="fragment">Good news! The above concepts are what we will cover in this unit!</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Take a look at terms</h2>
+            <p>In summary, JavaScript is:</p>
+            <ul>
+                <li class="fragment"><span style="color:coral">high-level</span>, aka easy for developers to generate code.</li>
+                <li class="fragment"><span style="color:yellow">interpreted</span>, aka easy for machines to execute the compiled code.</li>
+                <li class="fragment"><span style="color:pink">weakly typed</span>, aka easy for changing data type as needed.</li> 
+                <li class="fragment"><span style="color:wheat">event-driven</span>, aka easy for updating the UI based on events.</li>
+                <li class="fragment">functional, aka easy for functions to handle events and more.</li>
+                <li class="fragment">imperative, aka it can support <span style="color:lightblue">object-oriented and prototype-based</span> programming styles. More on this soon!</li>
+            </ul>
+            <p class="fragment">In other words, JavaScript is awesome and multi-purpose!</p>
+        </section>
+
+        <section>
+            <h2>What is important about object oriented programming?</h2>
+            <p>Software is a collection of cooperating objects rather than a collection of functions or simply a list of commands.</p>
+            <ul>
+                <li class="fragment">An object contains <span style="color:orange">state</span> and <span style="color: lightgreen">behavior</span>:
+                    <ul>
+                        <li class="fragment"><i><span style="color:orange">state</span></i> aka data, properties, variables</li>
+                        <li class="fragment"><i><span style="color: lightgreen">behavior</span></i> aka functions, methods, messages</li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="fragment">Takeaway: Software is made up of objects that have properties and methods to handle <span style="color:orange">state</span> and <span style="color: lightgreen">behavior</span>.</p>    
+        </section>
+        
+            <section>
+                <h3>What does this really mean? Why do we care?</h3>
+                <p>Objects are great because they contain <span style="color:orange">DATA</span> and <span style="color: lightgreen">FUNCTIONALITY</span>.</p>
+                <ul>
+                    <li class="fragment">Think of a radio.</li>
+                    <ul>
+                        <li class="fragment">A radio has <span style="color:orange">properties</span> like "made of metal", "has two buttons", "uses batteries", etc.
+                        <li class="fragment">A radio also has <span style="color: lightgreen">functionality</span>, like "plays music", "displays time", "connects to bluetooth device", etc.</li>
+                    </ul>
+                </li>
+                    <li class="fragment">What is another example that has <span style="color:orange">properties</span> and <span style="color: lightgreen">functionality</span>?</li>
+                </ul>
+                <p class="fragment">As programmers, we like to control both <span style="color:orange">data</span> and <span style="color: lightgreen">functionality</span>!</p>
+            </section> 
+
         <section>
             <h2>Objects</h2>
             <ul>
-                <li class="fragment">We have used Objects for storing information and we have manipulated and accessed the data within objects.</li>
-                <li class="fragment">Remember: An object is a <strong style="color: black; background-color: white">container</strong> for values in the form of properties and <strong style="color: black; background-color: white">functionality</strong> in the form of methods.
+                <li class="fragment">We have used Objects for storing information.</li>
+                <li class="fragment">We have used <b style="color: aqua;">dot notation</b> to manipulate and access the information in objects.</li>
+                <li class="fragment">Remember that an object is a container for: 
+                        <ul>
+                        <li class="fragment">values in the form of <span style="color:orange">properties</span></li>
+                        <li class="fragment"><span style="color: lightgreen">functionality</span> in the form of methods</li>
+                    </ul>
                 </li>
-                <li class="fragment">Ex: .getElementById is a method to find a tag with the corresponding AND it is a method on the document object.</li>
+<pre class="fragment"><code class="js" data-trim contenteditable>
+//Example of an object with properties
+var dice = {
+    sides: 6,
+    color: "green"  
+};
+</code></pre>
             </ul>
-            <aside class="notes"></aside>
+            <p class="fragment">Now how do we add <span style="color: lightgreen">functionality</span> (or <span style="color: lightgreen">methods</span>) to objects?</p>
         </section>
 
         <!--Slide 3-->
         <section>
             <h2>Adding Methods to Objects</h2>
-            <pre><code class="hljs" data-trim contenteditable>
-        function diceRoll() {
-        var sides = 6;
-        var randomNumber = Math.floor(Math.random() * sides) + 1;
-        console.log(randomNumber);
-        }
-        
-    var dice = {
-        
-        }
+            <p class="fragment">Adding functionality to objects means adding <span style="color: aqua;">functions</span>.</p>
+            <p class="fragment">Functions that are attached to objects are called <span style="color: aqua;">methods</span>.</p>
+            <p class="fragment">So let's review functions by examining the function below.</p>
+            <pre class="fragment"><code class="js" data-trim contenteditable>
+//This is an example of a function. Please explain each line of code.
+function diceRoll() {
+ var sides = 6;
+ var randomNumber = Math.floor(Math.random() * sides) + 1;
+ console.log(randomNumber);
+}
             </code></pre>
+            <p class="fragment">On the next slide, we will take this function, drop its name, attach it to a key, and make it into a <span style="color: aqua;">method</span> in our object.</p>
             <aside class="notes"></aside>
         </section> 
+        
         <!--Slide 4-->
         
         <section>
             <h2>Adding Methods to Objects</h2>
+            <p>Ta-da! The <b>function declaration</b> on the previous page has been transformed into a <span style="color: aqua;">method</span> here.</p>
             <pre><code class="hljs" data-trim contenteditable>
-        var dice = {
-            roll: function diceRoll() {
-            var sides = 6;
-            var randomNumber = Math.floor(Math.random() * sides) + 1;
-            console.log(randomNumber);
-        };
+var dice = {
+ roll: function() {
+   var sides = 6;
+   var randomNumber = Math.floor(Math.random() * sides) + 1;
+   console.log(randomNumber);
+ }
+};
             </code></pre>
-            <p>
-                Run dice.roll in the console. 
+            <p>How do you access the key of roll in this dice object?<br><span class="fragment" style="color: yellow;">Yes, use dot notation!</span></p>
+            <p class="fragment">Now run <span style="color: aqua;">dice.roll</span> in the console. What do you notice?
             </p>
-            <aside class="notes"></aside>
+            <p class="fragment">So how do we execute the function? What syntax do we need? Let's confirm on the next slide.</p>
         </section> 
         
         <!--Slide 5-->
         
         <section>
             <h2>Adding Methods to Objects</h2>
+            <p>Given this same object from the previous slide...</p>
             <pre><code class="hljs" data-trim contenteditable>
-        var dice = {
-            roll: function {
-            var sides = 6;
-            var randomNumber = Math.floor(Math.random() * sides) + 1;
-            console.log(randomNumber);
-        };
+var dice = {
+  roll: function() {
+    var sides = 6;
+    var randomNumber = Math.floor(Math.random() * sides) + 1;
+    console.log(randomNumber);
+  }
+};
             </code></pre>
-            <p>
-                Run dice.roll() in the console. 
-            </p>
+            <p>Now run <span style="color: aqua;">dice.roll()</span> in the console.</p>
+            <p>What do you notice?</p>
             <aside class="notes"></aside>
         </section> 
 
@@ -128,265 +271,558 @@
         
         <section>
             <h2>Variable Scope in Objects</h2>
-             <p>
-                What should we do if we want to change the var sides to a property of the object? How will the function call it?
-            </p>
+            <p>Now let's make sides a property of the dice object instead of a variable in the function, therefore changing the variable's scope. How would we refactor the code?</p>
             <pre><code class="hljs" data-trim contenteditable>
-        var dice = {
-            roll: function() {
-            var sides = 6;
-            var randomNumber = Math.floor(Math.random() *   sides) + 1;
-            console.log(randomNumber);
-        };
+var dice = {
+ roll: function() {
+   var sides = 6;
+   var randomNumber = Math.floor(Math.random() * sides) + 1;
+   console.log(randomNumber);
+ }
+};
             </code></pre>
+            <p class="fragment">After refactoring the code, how will you update the function so that the method runs properly?</p>
             <aside class="notes"></aside>
         </section> 
+        
         <!--Slide 7-->
         
         <section>
             <h2>Variable Scope in Objects</h2>
-            
+            <p>What is the benefit of having sides as a property<br>of the dice object?</p>
             <pre><code class="hljs" data-trim contenteditable>
-        var dice = {
-            roll: function() {
-            sides: 6;
-            var randomNumber = Math.floor(Math.random() *   dice.sides) + 1;
-            console.log(randomNumber);
-        };
+var dice = {
+ sides: 6,
+ roll: function() {
+  var randomNumber = Math.floor(Math.random() * dice.sides) + 1;
+  console.log(randomNumber);
+ }
+};
             </code></pre>
-             <p>
-                Now we can easily change the value of the property sides in the console by doing dice.sides=10.
-            </p>
+             <div class="fragment" style="display: flex; justify-content: center;">
+                <img data-enlargable width="100" style="border: 5px solid blue; cursor: zoom-in;" src="img/dice.jpg" alt="multi-sided dice">
+                <div>
+                <p width="300">Now we can easily change the value of the property sides in our code to accommodate all kinds of dice!</p>
+                <p width="300" class="fragment">How do you update the dice object to have 10 sides? <span class="fragment" style="color: aqua;">dice.sides = 10;</span></p>
+                </div>
+             </div>
+            
             <aside class="notes"></aside>
         </section> 
 
+        <section>
+            <h2>Sharing Methods: An Intro</h2>
+            <p>Sometimes, we want to share methods <i>between</i> objects.</p>
+            <p>Examples in daily life:</p>
+            <ul>
+                <li class="fragment"><b>Baseball</b>: a player1 object may want to use player2 object's method of "slide" to slide into second base.</li>
+                <li class="fragment"><b>Vehicle</b>: a car object may want to use the "float" method from a boat object and the "fly" method from an airplane object.</li>
+                <li class="fragment"><b>Toaster Oven</b>: a toaster oven may want to use the "toast" method from a toaster object and the "bake" method from an oven object.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Sharing Methods: Toaster Oven</h2>
+            <p>Sometimes, we want to share methods <i>between</i> objects.</p>
+            <p class="fragment">For example, we want a toaster oven that combines the best methods of both worlds: the toaster and the oven.</p>
+            <pre class="fragment"><code class="hljs" data-trim contenteditable>
+var toaster = {
+    slots: 2,
+    time: 3,
+    toast: function() {
+    console.log("Ready to toast for " + toaster.time + " minutes.");
+    }
+};
+
+var oven = {
+    slots: 2,
+    time: 20,
+    bake: function() {
+    console.log("Ready to bake for " + oven.time + " minutes.");
+    }
+};
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Sharing Methods: An Example</h2>
+            <p>Imagine an app that has 200 user objects. What are some basic features common to apps?</p>
+            <ul class="fragment">
+                <li>add a profile pic</li>
+                <li>add a tagline</li>
+                <li>post/like/share an update</li>
+            </ul> 
+            <p class="fragment">Wouldn't it be nice if addProfilePic, addTagline, postUpdate, likePost, etc. methods can be used by these 200 objects?</p>
+            <p class="fragment">Now imagine each object containing each of the above methods, which means A LOT of repetitive lines of code!</p>
+            <p class="fragment">On the next slide we will begin to solve this problem.</p>
+        </section>
         <!--Slide 8-->
 
         <section>
             <h2>Remember Scope?</h2>
+            <p>Functions can access the variables that are located locally within their scope.</p>
             <p>
-                <a href="www.teaching-materials.org/jsreview/#/30">Refresh your memory here!</a>
+                <a href="https://anniecannons.github.io/ac-intro-js-functions/#/33">Refresh your memory here!</a>
             </p>
             <aside class="notes"></aside>
+        </section>
+
+        <section>
+            <h2>Scope</h2>
+            <p>So far, we have talked about <scan style="color: aqua;">lexical scope</scan> (global and local scope). This scope references where something was defined.</p>
+            <p>Now we are going to talk about <scan style="color: yellow;">dynamic scope</scan>. This is a type of scope that is based on execution context, the environment a function is called/run/executed.</p>
         </section>
 
          <!--Slide 9-->
+
         <section>
-            <h2>Introducing 'this'</h2>
+            <h2>'this' keyword</h2>
+            <p>JavaScript has an extremely powerful keyword - "<code style="color: aqua;">this</code>".</p>
             <ul>
-                <li class="fragment">JavaScript gives you, the developer, access to an extremely powerful keyword - “this”. “this” can be used to access data contextually, allowing your functions and methods to access the data that they need based on a specific context.</li>
-                <li class="fragment">The ‘this’ keyword can be used to access values, methods, and other objects on a context specific basis. (Meaning, ‘this’ changes based on where it is used.)
+                <li class="fragment"><code style="color: aqua;">this</code> can be used to access data contextually, allowing your functions and methods to access the data that they need based on execution context.</li>
+                <li class="fragment">The <code style="color: aqua;">this</code> keyword can be used to access values, methods, and other objects on a context-specific basis.
+                </li>
+                <li class="fragment">Meaning, <code style="color: aqua;">this</code> can change based on where it is used.
                 </li>
             </ul>
             <aside class="notes"></aside>
         </section>
-        
-        <!--Slide 10-->
-        
-        <section>
-            <h2>Introducing 'this'</h2>
-            <p>
-                First way to use “this”: Inside a function!
-            </p>
-            <pre><code class="hljs" data-trim contenteditable>
-    var Portland = {
-        bridges: 12,
-        airport: 1,
-        soccerTeams: 1,
-        logNumberOfBridges: function ( ) {
-            console.log (“There are “ + this.bridges + “ bridges in Portland”)
-        }
-    }
 
-    Portland.logNumberOfBridges( );
-            </code></pre>
-             <p>
-            When ‘this’ is being called by a method on an object,will always reference the object itself.  
+        <!--Slide 9.1-->
+
+        <section>
+            <h2>
+                More on 'this'
+            </h2>
+            <p>
+                <code style="color: aqua;">this</code> always points to the object that it has been linked to.
             </p>
+            <pre><code class="js" data-trim contenteditable>
+var circle = {
+    radius: 2,
+    circumference: function() {
+        return Math.PI * 2 * this.radius;
+    }
+}
+console.log(circle.circumference()); // 12.566370614359172
+//'this' is referring to 'circle' object.
+            </code></pre>
+            <p class="fragment">Let's make another object that has a bigger radius.</p>
+            <pre class="fragment"><code class="js" data-trim contenteditable>
+var biggerCircle = {
+    radius: 4
+};
+            </code></pre>
+            <p class="fragment">Using dot notation, how do we create a circumference method for this bigger circle object? <span class="fragment">See next slide. 😊</span>
             <aside class="notes"></aside>
         </section> 
 
+        <!--Slide 9.2-->  
+
+        <section>
+            <h2>'this' continued</h2>
+            <pre><code class="js" data-trim contenteditable>
+var biggerCircle = {
+    radius: 4
+};
+biggerCircle.circumference = circle.circumference;
+            </code></pre>
+            <p>Let's console.log the circumference of the bigger circle.</p>
+            <pre><code class="js" data-trim contenteditable>
+console.log(biggerCircle.circumference()); // 25.132741228718345
+//What is happening above?
+            </code></pre>
+            <p class="fragment">The <code style="color: aqua;">this</code> in the circumference method is now referencing the radius of the bigger circle object!</p>
+            <p class="fragment">
+                <code style="color: aqua;">this</code> allows one <span style="color: lightgreen">function (method)</span> to operate on many <span style="color:orange">states (instances)</span>.
+            </p>
+            <aside class="notes"></aside>
+        </section> 
+            
+        <!--Slide 10-->
+        
+        <section>
+            <h2>Another Example</h2>
+            <pre><code class="hljs" data-trim contenteditable>
+var portland = {
+  name: "Portland",
+  bridges: 12,
+  airport: 1,
+  soccerTeams: 1,
+  logNumberOfBridges: function () {
+    console.log ("There are " + this.bridges + " bridges in " + this.name);
+  }
+}
+
+portland.logNumberOfBridges();
+            </code></pre>
+            <aside class="notes"></aside>
+        </section> 
+
+        <section>
+            <h2>'this'</h2>
+            <p><code style="color: aqua;">this</code> is an identifier that gets a value bound to it, much like a variable. <span class="fragment">Ex: <code style="color: aqua;">this</code><code>.property</code>, <code>.call(<span style="color: aqua;">this</span>, param)</code></span></p>
+            <p class="fragment">Instead of identifying the values explicitly in your code block, <code style="color: aqua;">this</code> gets bound to the correct object automatically.</p>
+            <p class="fragment"><code style="color: aqua;">this</code> is so helpful for methods.<br>Think of <code style="color: aqua;">this</code> as a pronoun.</p>
+        </section>
+
+        <section>
+            <h2>What is the output of this code?</h2>
+<pre><code class="hljs" data-trim contenteditable>
+var person = {
+    firstName: "Penelope",
+    lastName: "Barrymore",
+    getName: function () {
+        return this.firstName + " " + this.lastName;
+    }
+}
+
+console.log(person.getName());
+</code></pre>
+        </section>
+
         <!--Slide 11-->
+
         <section>
             <h2>Brainstorm</h2>
             <ul>
-                <li class="fragment">What should you do if you want to create a lot of objects with some of the same keys/properties but different values? </li>
-                <li class="fragment">EX: You are working at Facebook and want to be able to store the same type of information about all your users, BUT creating an object literal for each user would take you a LOOOOONG time.
-                </li>
+                <li class="fragment">What should you do if you want to create a lot of objects with some of the same keys/properties but different values?
+                <li class="fragment">EX: You are working at Facebook and want to be able to store the same type of information about all your users.
+            </li>
             </ul>
             <aside class="notes"></aside>
         </section>
-    <!--Slide 12-->
+
+        <!--Slide 12-->
+
         <section>
             <h2>Object Literal vs Object Constructor</h2>
             <ul>
-                <li class="fragment">Object literals aren't the only way to create objects. If you're making a lot of similar objects you can use a constructor function to generate new objects of the same kind.</li>
-                <li class="fragment">Object literals are great for one off objects or passing values to a function, but if you want to create multiple object of the same kind or type, you'll need to use constructor functions. 
-                </li>
+                <li class="fragment">Object literals define an object literally:</li>
+                <pre class="fragment"><code class="hljs" data-trim contenteditable>
+var myDog = {
+    username: 'coach', 
+    age: '1'
+}
+                </code></pre>
+
+                <li class="fragment">Object literals aren't the only way to create objects. When making a lot of similar objects, you can use a <span style="color: aqua;">constructor function</span> to generate new objects of the same kind.</li>
+                <li class="fragment">Object literals are great for one-off objects or passing values to a function, but if you want to create multiple objects of the same kind or type, you'll need to use <span style="color: aqua;">constructor functions</span>.</li>
             </ul>
-            <aside class="notes"></aside>
-        </section>
-        <!--Slide 13-->
-        <section>
-            <h2>Object Literal vs Object Constructor</h2>
-            <p>Object Constructor Properties</p>
-            <ol>
-                <li class="fragment">Describes how an object should be created.</li>
-                <li class="fragment">Creates similar objects
-                </li>
-                <li class="fragment">Each object created is known as an instance of that object type.</li>
-            </ol>
         </section>
 
-        <!--Slide 14-->
+         <section>
+             <h2>Object Constructor Properties </h2>
+             <img data-enlargable width="200" style="border: 5px solid blue; cursor: zoom-in;" src="img/stamp.png" alt="rubber stamp">
+            <ul>
+                <li class="fragment">Describes how an object should be created (example: dog).</li>
+                <li class="fragment">Each object created is known as an <span style="color: aqua;">instance</span> of that object type (example: coach).</li>
+                <li class="fragment">Calling the constructor object to create an instance is called <span style="color: aqua;">instantiation</span>.</li>
+            </ul>
+        </section>
+
         <section>
-            <h2>Object Literal vs Object Constructor</h2>
-            <p>Example:</p>
+            <h2>Object Constructor Example: Dog </h2>
+            <p>Let's create an object constructor based on this object literal:</p>
             <pre><code class="hljs" data-trim contenteditable>
-    function Contact (name, email) {
-        this.name = name;
-        this.email = email;
-    }
-    var contact = new Contact (“Laura”, “laura@hello.com”);
+var myDog = {
+    username: 'coach', 
+    age: '1'
+}
             </code></pre>
-            <p>//Note: the name of the function is capitalized so you know it is a constructor!</p>
-            <aside class="notes"></aside>
+            <p class="fragment">Because <span style="color: aqua;">constructor functions</span> are functions that when called create new instances of an object, what <span style="color: aqua;">keyword</span> will we use to create one? <code class="fragment" style="color: aqua;">function</code></p>
+            <pre class="fragment"><code class="hljs" data-trim contenteditable>
+function
+            </code></pre>
         </section>
 
-    <!--Slide 15-->
         <section>
-            <h2>Object Literal vs Object Constructor</h2>
-            <ul>
-                <li class="fragment">Keyword “new” turns regular function in to a constructor function. </li>
-                <li class="fragment">NOW, ‘this’ in our function means a new instance of an object.  It works kind of like this:  this = { }; 
-                </li>
-                <li class="fragment">The dot notation creates the keys for the new object.</li>
-            </ul>
+            <h2>Object Constructor Example: Dog </h2>
+            <p>Let's create an object constructor based on this object literal:</p>
+            <pre><code class="hljs" data-trim contenteditable>
+var myDog = {
+    username: 'coach', 
+    age: '1'
+}
+            </code></pre>
+            <p class="fragment">Constructor functions must have names in <span style="color: aqua;">capital case</span> (first letter of each word capitalized).</p>
+            <p class="fragment">To create instances that are all dogs, what word is best to name this function? <code class="fragment" style="color: aqua;">Dog</code></p>
+            <pre class="fragment"><code class="hljs" data-trim contenteditable>
+function Dog() {
+
+}
+            </code></pre>
         </section>
 
-   <!--Slide 16-->
         <section>
-            <h2>Object Literal vs Object Constructor</h2>
-            <ul>
-                <li class="fragment">By creating the “var contact”, we're creating a new contact instance.</li>
-                <li class="fragment">An instance is the specific realization of a particular type or object.
-                </li>
-                <li class="fragment"><p>How would we create another instance of this object constructor?</p></li>
-                <li class="fragment"> <pre><code class="hljs" data-trim contenteditable>
-    function Contact (name, email) {
-        this.name = name;
-        this.email = email;
-    }
-            </code></pre></li>
-            </ul>
+            <h2>Object Constructor Example: Dog </h2>
+            <p>Let's create an object constructor based on this object literal:</p>
+            <pre><code class="hljs" data-trim contenteditable>
+var myDog = {
+    username: 'coach', 
+    age: '1'
+}
+            </code></pre>
+            <p class="fragment">Because we want our constructor function to have 2 <span style="color: aqua;">properties</span> (username and age), what must we pass into the constructor function?</p>
+            <pre class="fragment"><code class="hljs" data-trim contenteditable>
+function Dog(username, age) {
+   
+}
+            </code></pre>
         </section>
 
-    <!--Slide 17-->
         <section>
-            <h2>Object Literal vs Object Constructor</h2>
+            <h2>Object Constructor Example: Dog </h2>
+            <p>Let's create an object constructor based on this object literal:</p>
+            <pre><code class="hljs" data-trim contenteditable>
+var myDog = {
+    username: 'coach', 
+    age: '1'
+}
+            </code></pre>
+            <p class="fragment">Constructor functions create objects (has properties, values).</p>
+            <p class="fragment">So after passing parameters into the function, in its code we need info about the instances' properties and values.</p>
+            <pre class="fragment"><code class="hljs" data-trim contenteditable>
+function Dog(username, age) {
+    propertyName1 = username; //value of username stored in a property name
+    propertyName2 = age; //value of age stored in a property name
+}
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Object Constructor Example: Dog </h2>
+            <p>Let's create an object constructor based on this object literal:</p>
+            <pre><code class="hljs" data-trim contenteditable>
+var myDog = {
+    username: 'coach', 
+    age: '1'
+}
+            </code></pre>
+            <p class="fragment">Values will change based on what is passed into the function.<br>However, property names stay the same.</p>
+            <p class="fragment">The <span style="color: aqua;">this</span> keyword is useful for running functions contextually.<br>So we use <span style="color: aqua;">this</span> before the dot notation to insert properties for instances of Dog.</p>
+            <pre class="fragment"><code class="hljs" data-trim contenteditable>
+function Dog(username, age) {
+    this.username = username;
+    this.age = age;
+}
+            </code></pre>
+       </section>
+
+       <section>
+        <h2>Object Constructor Example: Dog </h2>
+        <pre><code class="hljs" data-trim contenteditable>
+var myDog = {
+username: 'coach', 
+age: '1'
+}
+        </code></pre>
+        <p class="fragment">In order to call the Dog function to give us an instance of Dog (instantiate) that looks like the above object literal, we must use the keyword <span style="color: aqua;">new</span>.</p>
+        <p class="fragment">After the keyword, we will call the <span style="color: aqua;">Dog</span> function, passing in the values of "coach" and "1" respectively.</p>
+        <p class="fragment">We will store this information into a variable called <span style="color: aqua;">myDog</span>.</p>
+        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+function Dog(username, age) {
+    this.username = username;
+    this.age = age;
+}
+var myDog = new Dog('coach', '1');
+        </code></pre>
+       </section>
+
+
+       <section>
+        <h2>Object Constructor Example: Dog </h2>
+        <p>Subsequent instantiations can now be made with one line of code!</p>
+        <pre><code class="hljs" data-trim contenteditable>
+function Dog(username, age) {
+    this.username = username;
+    this.age = age;
+}
+var myDog = new Dog('coach', '1');
+        </code></pre>
+        <p class="fragment">Instantiate and store the information in a variable called <span style="color: aqua;">yourDog</span>.</p>
+        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+var yourDog = new Dog('archie', '2');
+        </code></pre>
+        <p class="fragment">Next slide: A recap on object literals and object constructors.</p>
+       </section>
+
+        <!--Slide 13-->
+
+        <section>
+            <h3>Object Literal vs Object Constructor</h3>
             <p>Object Literal</p>
             <pre><code class="hljs" data-trim contenteditable>
-        var flower = {
-            color : "red",
-            petals : 32,
-            smellsPretty : true
-        }
+var flower = {
+ color : "red",
+ petals : 32,
+ smellsPretty : true
+};
             </code></pre>
 
             <p>Constructor Object</p>
-            <pre><code class="hljs" data-trim contenteditable>
-        function Flower(color, petals){
-            this.color = color;
-            this.petals = petals;
-            this.smellsPretty= true;
-        }
+            <pre><code class="js" data-trim contenteditable>
+function Flower(color, petals, smell){
+ this.color = color;
+ this.petals = petals;
+ this.smellsPretty = smell;
+}
+var myNewFlower = new Flower('red', 32, true);
             </code></pre>
         </section>
-   <!--Slide 18-->
+
+        <!--Slide 14-->
 
         <section>
-            <p>Can you think of other specific times when you would need to use an object constructor?</p>
-        </section>
-
-    <!--Slide 19-->
-
-        <section>
-            <h1>QUIZ! :) </h1>
-        </section>
-
-    <!--Slide 20-->
-        <section>
-            <h2>Question 1</h2>
-            <p>Given the following code what is the best way to describe Monster?</p>
-            <pre><code class="hljs" data-trim contenteditable>
-    function Monster(rank) {
-        this.rank = rank;
-        this.health = 100;
-        this.takeHit = function() {
-            this.health--;
-            }
-        this.isDead = function() {
-            return this.health <= 0;
-        } 
-    }
-
-    var monster = new Monster("Captain");
-            </code></pre>
-            <p>A) A regular function</p>
-            <p>B) A constructor function</p>
-            <p>C) An instance of Monster</p>
+            <p>Creating a user-defined object requires two steps:</p>
+            <ol>
+                <li class="fragment">Define the object type by writing a <code style="color: aqua;">function</code> that utilizes <code style="color: aqua;">this</code> in its code block.</li>
+                <li class="fragment">Create an instance of the object with <code style="color: aqua;">new</code>.</li>
+            </ol>
             <aside class="notes"></aside>
         </section>
 
-    <!--Slide 21-->
+        <!--Slide 15-->
+        
         <section>
-            <h2>Question 2</h2>
+            <p>Example:</p>
+            <pre><code class="hljs" data-trim contenteditable>
+//Defines the new object
+function Contact(name, email) {
+ this.name = name;
+ this.email = email;
+}
+//Creates the new instance
+var myContact = new Contact('Laura', 'laura@hello.com');
+            </code></pre>
+            <p>Important: the name of the function is capitalized so you know it is a <span style="color: aqua;">constructor</span>!</p>
+            <aside class="notes"></aside>
+        </section>
+
+        <!--Slide 16-->
+
+        <section>
+            <p>What would the name value be in myContact?</p>
+            <pre><code class="hljs" data-trim contenteditable>
+console.log(myContact.name);
+            </code></pre>
+            <aside class="notes"></aside>
+        </section>
+        
+        <!--Slide 17-->
+
+        <section>
+            <p>What would the name value be in myOtherContact?</p>
+            <pre><code class="hljs" data-trim contenteditable>
+function Contact(name, email) {
+ this.name = name;
+ this.email = email;
+}
+//Creates the new instance
+var myOtherContact = new Contact('Hubs', 'hubs@hello.com');
+console.log(myOtherContact.name);
+            </code></pre>
+
+            <aside class="notes">Why?</aside>
+        </section>
+
+        <!--Slide 18-->
+
+        <section>
+
+            <pre><code class="hljs" data-trim contenteditable>
+var myContact = new Contact('Laura', 'laura@hello.com');
+            </code></pre>
+            <ul>
+                <li class="fragment">Keyword <span style="color: aqua;">new</span> turns a regular function into a constructor function.</li>
+                <li class="fragment">And returns a new <span style="color: aqua;"><b>instance</b></span> of the Contact object, myContact.</li>
+                <li class="fragment">This is called <span style="color: aqua;"><b>instantiation</b></span>.</li>
+            </ul>
+            <p class="fragment">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new" target="_blank">Read more...</a>
+            </p>
+            <aside class="notes"></aside>
+        </section>
+
+        <!--Slide 19-->
+
+        <section>
+            <p>Can you think of other specific times when you would need to use an <span style="color: aqua;">object constructor</span>?</p>
+        </section>
+        <section>
+          <h2>Let's Review "new"</h1>
+          <ol>
+            <li>Creates a new Object.</li>
+            <li>Creates and binds a new <code style="color: aqua;">this</code> to that object.</li>
+            <li>It sets this new object's <code style="color: aqua;">prototype</code> property to be the constructor function's <code style="color: aqua;">prototype</code> object.</li>
+            <li>It executes the constructor function.</li>
+            <li>It returns the newly created object.</li>
+          </ol>
+        </section>
+
+        <!--Slide 20-->
+
+        <!--Slide 21-->
+
+        <section>
+            <h3>Animal Exercise</h3>
             <p>Given the following code: </p>
             <pre><code class="hljs" data-trim contenteditable>
-    function Animal(breed, noise) {
-        this.breed = breed;
-        this.noise = noise;
-        this.makeNoise = function() {
-            console.log(this.noise + ", " + this.noise);
-        }
-    }
+function Animal(species, noise) {
+  this.species = species;
+  this.noise = noise;
+  this.makeNoise = function() {
+    console.log(this.noise + ", " + this.noise);
+  }
+}
             </code></pre>
             <p>How would you create an instance of an Animal?</p>
             <aside class="notes"></aside>
         </section>
+
+        <!--Slide 22-->
+
+        <section>
+            <h3>Todo List Exercise</h3>
+            <p>
+                How would you describe a task in a todo list. Your task should have:
+            </p>
+            <ul>
+                <li>A description of the task.</li>
+                <li>An attribute to define if the task is done.</li>
+                <li>A method to call when it is done.</li>
+            </ul>
+            <br>
+            <a href="https://docs.google.com/spreadsheets/d/1dHybQNvrC0g8qR0Aolo75Cg68-Lc9ecrDJIfwZdYrbc/edit?usp=sharing" target="_blank"><img width="200" src="img/google-sheets.png" alt="Sheets logo"></a>
+            <img src="img/exercise.gif" alt="Exercise Time">
+        </section>
         
-    <!--Slide 22-->
+        <!--Slide 23-->
+
         <section>
-            <h2>Question 3</h2>
-            <p>Given the following code what is the best way to describe task?</p>
+            <h2>Solution</h2>
             <pre><code class="hljs" data-trim contenteditable>
-    function TodoListItem(description) {
-        this.description = description;
-        this.isDone = false;
-        this.toString = function() {
-            return this.description;
-        }
-        this.markAsComplete = function() {
-        this.isDone = true;
-        }
-    }
+function TodoListItem(description) {
+  this.description = description;
+  this.isDone = false;
+  this.markAsComplete = function() {
+    this.isDone = true;
+  }
+}
 
-    var task = new TodoListItem("Do the laundry!");
+var task = new TodoListItem("Do the laundry!");
             </code></pre>
-            <p>A) A regular function</p>
-            <p>B) A constructor function</p>
-            <p>C) An instance of TodoListItem</p>
-            <aside class="notes"></aside>
         </section>
 
-    <!--Slide 23-->
+        <!--Slide 24-->
 
         <section>
-            <h2>Whiteboard Review Exercise</h2>
-            <p>Write an object constructor for your new Social Media site that has three properties.</p>
+            <h3>Question</h3>
+            <p>What kind of objects you might need for your new Social Media site?</p>
+            <p>What would be the properties on those objects?</p>
         </section>
 
-    <!--Slide 24-->
+        <!--Slide 25-->
 
         <section>
             <h2>How do we add a method to a constructor?</h2>
@@ -397,70 +833,352 @@ function City (name, nickname) {
     this.nickname = nickname;
     this.slogan = function () {
         console.log(this.name + " is the best city in the country!");
-        };
+    };
 }
 
 var sanFrancisco = new City("San Francisco", "City By The Bay");
             </code></pre>
         </section>
 
-<!--Slide 25-->
+        <!--Slide 26-->
+
         <section>
-        <p>Every time we create an object, this code is ran, and a new anonymous function is created again and again. Your program is taking up more space in the computer’s RAM, or memory. This can lead to your applications slowing down, or even the whole browser itself.</p>
+        <p>Every time we create an object, the program runs the code, and a new anonymous function is created again and again.</p>
+        <p class="fragment">More code in your program means more space used in the computer’s memory.</p>
+        <p class="fragment">How do we solve this problem?</p>
         </section>
 
-<!--Slide 26-->
+        <!--Slide 27-->
         <section>
-            <h2>How do we add a method to a constructor?</h2>
-            <p>We can add a method onto this object constructor by using prototype.</p>
-            <p>The prototype on a constructor function is an object like an object literal. And it can be added to an object and given a function. It becomes a method.</p>
+            <h2>Use 'prototype'!</h2>
+            <p>We can add a method onto this object constructor by using <code style="color: aqua">prototype</code>.</p>
             <pre><code class="hljs" data-trim contenteditable>
-function City (name, nickname) {
+function City(name, nickname) {
   this.name = name;
   this.nickname = nickname;
 }
-City.prototype.slogan = function () {
-  console.log(this.name + " is the best city in the country!");
-};
-var sanFrancisco = new City("San Francisco", "City By The Bay”);
+City.prototype.slogan = function(){
+ console.log(this.name + " is the best city in the country!");
+}
+var sanFrancisco = new City("San Francisco", "City By The Bay");
 sanFrancisco.slogan();
             </code></pre>
         </section>
 
-         <!--Slide 27-->
+        <!--Slide 28-->
+
         <section>
-            <h2>Prototypes</h2>
+            <h2>
+               Another Example 
+            </h2>
+            <pre><code class="hljs" data-trim contenteditable>
+function Circle(radius) {
+    this.radius = radius;
+}
+Circle.prototype.circumference = function() {
+    return Math.PI * 2 * this.radius;
+}
+Circle.prototype.area = function() {
+    return Math.PI * this.radius * this.radius;
+}
+
+var circle = new Circle(2);
+circle.radius;  // this is 2; it's stored on the circle
+circle.area;    // this is a function; it's stored on Circle.prototype
+circle.area();  // this is a function call; inside it, "this" points to the circle
+            </code></pre>
+            <aside class="notes"></aside>
+        </section> 
+      
+        <!--Slide 29-->
+
+        <section>
+            <h2>
+                More on prototype!
+            </h2>
+            <p>A constructor function makes an object <strong>linked to </strong> its own <code style="color: aqua">prototype</code></p>
+            <pre><code class="hljs" data-trim contenteditable>
+function Greeter(who) {
+    this.me = who;
+}
+Greeter.prototype.identify = function (){
+    return "I am " + this.me;
+};
+
+var person1 = new Greeter("Alice");
+var person2 = new Greeter("Bob");
+
+person1.constructor === Greeter; //true
+person1.constructor === person2.constructor; //true
+            </code></pre>
+            <p>Let's explore the code in <a href="https://codepen.io/codexmon/pen/BazbbBV" target="_blank">Codepen</a>.</p>
+            <aside class="notes"></aside>
+        </section> 
+    
+        <!--Slide 30--> 
+
+        <section>
+            <h2>
+                Time for some whiteboard diagram drawing!
+            </h2>
+            <aside class="notes"></aside>
+        </section> 
+
+        <section>
+            <h2>Prototype Chain</h2>
+            <img data-enlargable width="500" style="border: 5px solid blue; cursor: zoom-in;" src="img/prototypes-animal-dog.png" alt="Prototype Chain">
+            <p class="fragment">The <span style="color: orangered;">Animal Constructor</span> inherits properties/methods of the <span style="color: aqua;">Global Object.</span>
+            <span class="fragment">The <span style="color: orange;">Dog Constructor</span> extends the <span style="color: orangered;">Animal Constructor</span>.</span>
+            <span class="fragment"><span style="color: lightgreen;">Lassie</span> is an instance of the <span style="color: orange;">Dog Constructor</span>.</span>
+            <span class="fragment"><span style="color: lightgreen;">Lassie</span> inherits properties/methods of both Constructors: <span style="color: orangered;">Animal</span>, <span style="color: orange;">Dog</span>.</span>
+        </section>
+        
+        <!--Slide 30--> 
+
+        <section>
+            <h2>
+                The magic of prototype and <span style="color: aqua;">this</span>!
+            </h2>
+            <pre><code class="hljs" data-trim contenteditable>
+function Greeter(who) {
+    this.me = who;
+}
+Greeter.prototype.identify = function() {
+    return "I am " + this.name;
+};
+Greeter.prototype.speak = function() {
+    alert("Hello, " + this.identify() + ".");
+};
+
+var person1 = new Greeter("Alice");
+person1.speak():
+            </code></pre>
+        </section> 
+
+        <!--Slide 31--> 
+
+        <section>
             <ul>
-                <li class="fragment">JavaScript is known as a prototypal programming language.</li>
-                <li class="fragment">Meaning, you can use prototypes as templates for objects for values and behavior to be shared between instances of objects.
-                </li>
-                <li class="fragment">So instead of the slogan method being defined for every instance when we construct one, it is shared between all instances through the template or prototype.</li>
+                <li><code style="color: aqua;">this</code> can be thought of as "<span style="color: yellow;">dynamic scope</span>" (as opposed to lexical scope like global and local scope)</li>
+                <li class="fragment"><code style="color: aqua;">this</code> tells us which building to go into, or which address of the building downtown to go into</li>
+                <li class="fragment"><code style="color: aqua;">prototype</code> tells us how we are going to find properties if they don't exist on the direct object</li>
             </ul>
+            <aside class="notes"></aside>
+        </section> 
+        
+        <!--Slide 32-->
+
+        <section>   
+            <h2>Review Exercise Part 1</h2>
+            <p>Go to <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/object-oriented-programming/">FreeCodeCamp</a>.</p>
+            <p>Sign in with your Github account.</p>
+            <p>Complete the first 8 lessons (including instanceof).</p>
+            <a href="https://docs.google.com/spreadsheets/d/1dHybQNvrC0g8qR0Aolo75Cg68-Lc9ecrDJIfwZdYrbc/edit?usp=sharing" target="_blank"><img width="200" src="img/google-sheets.png" alt="Sheets logo"></a><br>
+            <img src="img/exercise.gif" alt="Exercise Time">
         </section>
-         <!--Slide 28-->
+
         <section>
-            <h2>Let's review this!</h2>
-            <a href="www.teaching-materials.org/jsoo/#/1">More on prototypes!</a>
+          <h2>A helpful diagram</h2>
+          <img data-enlargable width="500" style="border: 5px solid blue; cursor: zoom-in;" src="img/bookoo_extended.png" alt="Book Diagram">
+          <ul style="font-size:smaller;">
+            <li>Objects can inherit properties/methods of other objects</li>
+            <li>Objects can implement parent methods in different ways</li>
+          </ul>
+          <p>Check out this <a href="https://codepen.io/codexmon/pen/YzWdRZR?editors=0012" target="blank">Codepen</a>.</p>
         </section>
-        <!--<section>-->
-            <!--<h2>Clever Quotes</h2>-->
-            <!--<p>-->
-                <!--These guys come in two forms, inline: <q-->
-                    <!--cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">-->
-                <!--&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:-->
-            <!--</p>-->
-            <!--<blockquote-->
-                    <!--cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">-->
-                <!--&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of-->
-                <!--typewriters would-->
-                <!--reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;-->
-            <!--</blockquote>-->
-        <!--</section>-->
+
+        <!--Slide 33-->
+ 
+        <section>
+            <h3>How do we help our objects extend to access more methods?</h3>
+            <p class="fragment">The object constructor will need <code style="color: aqua;">.call()</code> to handle the <span style="color:orange">properties</span>.</p>
+            <p class="fragment">The prototype of the object constructor will need <code style="color: aqua;">Object.create()</code> to handle the <span style="color:lightgreen">methods</span>.</p>
+        </section>
+
+        <section>
+            <h2>Using .call()</h2>
+            <p>Let's review the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call" target="_blank">documentation</a>.</p>
+            <p class="fragment">Notice that <code style="color: aqua;">this</code> needs to passed into <code style="color: aqua;">.call()</code> with the <span style="color:orange">property name</span> of another object constructor.</p>
+        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+function Greeter(who) {
+    this.me = who;
+}
+Greeter.prototype.identify = function(){
+    return "I am " + this.me;
+}
+//.call() with "this" and a property of Greeter passed in 
+//will allow Bar to access Greeter's "who" property.
+function Bar(who) {
+    Greeter.call(this,who);
+}
+        </code></pre>
+        </section>
+
+        <section>
+            <h2>Using Object.create()</h2>
+            <p>Let's review the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create" target="_blank">documentation</a>.</p>
+            <p class="fragment">Notice the <code style="color: aqua;">prototype</code> of an object constructor is passed into <code style="color: aqua;">Object.create()</code> to handle <span style="color:lightgreen">methods</span> of another object constructor.</p>
+        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+Object.create(Greeter.prototype);
+        </code></pre>
+        <div class="fragment">
+            <p>The function's execution is assigned to the <code style="color: aqua;">prototype</code> of another object constructor:</p>
+        <pre><code class="hljs" data-trim contenteditable>
+Bar.prototype = Object.create(Greeter.prototype);
+        </code></pre>
+        </div>
+        </section> 
+
+        <section>
+            <h2>Bar Prototype extends Greeter Prototype</h2>
+            <p>The Bar Constructor can now have a <span style="color:lightgreen">method</span> that uses Greeter's "identify" <span style="color:lightgreen">method</span>.</p>
+            <pre><code class="hljs" data-trim contenteditable>
+alert("Hello, " + this.identify() + ".");
+            </code></pre>
+            <p class="fragment">Assigning the above code block to a <span style="color:lightgreen;">method</span> of Bar Constructor's <code style="color: aqua;">prototype</code> allows instances of Bar to access <span style="color:lightgreen;">methods</span> of Bar and Greeter.</p>
+            <pre class="fragment"><code class="hljs" data-trim contenteditable>
+Bar.prototype.speak = function (){
+    alert("Hello, " + this.identify() + ".");
+}
+            </code></pre>
+        </section>
+        <!--Slide 34-->
+
+        <section>
+            <h2>Instances of Bar (aka Customers)</h2>
+            <p>How do we make instances of Bar (e.g., customers)?</p>
+            <pre><code class="hljs" data-trim contenteditable>
+function Greeter(who) {
+    this.me = who;
+}
+Greeter.prototype.identify = function(){
+    return "I am " + this.me;
+}
+function Bar(who) {
+    Greeter.call(this,who);
+}
+            </code></pre>
+            <p class="fragment">Hint: Bar accepts one parameter.</p>
+            <pre class="fragment"><code class="hljs" data-trim contenteditable>
+var customer1 = new Bar("Viola");
+var customer2 = new Bar("Jamie");
+            </code></pre>
+            <p class="fragment">The Bar Constructor has a speak <span style="color:lightgreen">method</span>. How do you call it for customer1?</p>
+            <pre class="fragment"><code class="hljs" data-trim contenteditable>
+customer1.speak();
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Accessing Methods Between Objects</h2>
+            <p>What do we expect to see when we run the last line of code?</p>
+            <pre class="fragment"><code class="hljs" data-trim contenteditable>                  
+function Greeter(who) {
+    this.me = who;
+}
+Greeter.prototype.identify = function(){
+    return "I am " + this.me;
+}
+function Bar(who) {
+    Greeter.call(this,who);
+}
+Bar.prototype = Object.create(Greeter.prototype);
+
+Bar.prototype.speak = function (){
+    alert("Hello, " + this.identity() + ".");
+}
+var customer1 = new Bar("Viola");
+var customer2 = new Bar("Jamie");
+customer1.speak();
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>
+                What just happened?
+            </h2>
+            <ul>
+                <li class="fragment">We wanted to create a child function called Bar that is supposed to inherit from or EXTEND the parent function.</li>
+                <li class="fragment">aka we need Bar's <code style="color: aqua;">prototype</code> to extend Greeter's <code style="color: aqua;">prototype</code> so that Bar can link to Greeter's <span style="color:lightgreen;">methods</span>.</li>
+                <li class="fragment">We used:
+                    <ul>
+                        <li class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call">.call()</a> for <span style="color:orange;">property</span> inheritance</li>
+                        <li class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create">Object.create</a> for <span style="color:lightgreen;">method</span> inheritance</li>
+                    </ul>
+                </li>
+            </ul>
+            <aside class="notes"></aside>
+        </section> 
+            
+        <section>   
+            <h2>Review Exercise Part 2</h2>
+            <p>Go to <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/object-oriented-programming/">FreeCodeCamp</a>.</p>
+            <p>Sign in with your Github account.</p>
+            <p>Start at "Understand Own Properties" lesson and complete through "Override Inherited Methods".</p>
+            <a href="https://docs.google.com/spreadsheets/d/1dHybQNvrC0g8qR0Aolo75Cg68-Lc9ecrDJIfwZdYrbc/edit?usp=sharing" target="_blank"><img width="200" src="img/google-sheets.png" alt="Sheets logo"></a>
+            <img src="img/exercise.gif" alt="Exercise Time">
+
+        </section>
+        <!--Slide 34-->
 
 
-        <!--You can link between slides internally,-->
-        <!--<a href="#/2/3">like this</a>.-->
+        <section>
+          <h2>Another example</h2> 
+          <p>We've been looking at prototype and inheritance. Let's explore the following code and explain line by line.</p>
+          <pre><code class="hljs" data-trim contenteditable>
+// The constructor function
+function Paperback(title, author, numPages, cover) {
+  Book.call(this, title, author, numPages);
+  this.cover = cover;
+}
+// Extending the Book object
+Paperback.prototype = Object.create(Book.prototype);
 
+// A new method on this object
+Paperback.prototype.burn = function() {
+  console.log("Omg, you burnt all " + this.numPages + " pages");
+  this.numPages = 0;
+}
+// Instantiating a new object
+var paperback = new Paperback("1984", "George Orwell", 250, "cover.jpg");
+paperback.read();
+paperback.burn();
+            </pre></code>
+        </section>
+
+        <!--Slide 34-->
+
+        <section>
+            <h2>Book Constructor Part 2</h2>
+            <p>Let's revisit <a href="https://codepen.io/codexmon/pen/ZEOPZWK?editors=0012" target="_blank">Codepen</a>.</p>
+          <img src="img/book_paperback_venn.png" alt="Book Diagram"/>
+        </section>
+
+        <!--Slide 35-->
+
+        <section>
+            <h2>Video Exercise</h2>
+            <img data-enlargable width="400" style="border: 5px solid blue; cursor: zoom-in;"  src="img/creating-objects.png" alt="Creating Objects Exercise">
+            <br>
+            <a href="https://docs.google.com/spreadsheets/d/1dHybQNvrC0g8qR0Aolo75Cg68-Lc9ecrDJIfwZdYrbc/edit?usp=sharing" target="_blank"><img width="100" src="img/google-sheets.png" alt="Sheets logo"></a>
+            <img width="200" src="img/exercise.gif" alt="Exercise Time">
+            <aside class="notes">Use Visual Studio Code for this exercise. Scroll down at this link for the solution button: http://www.teaching-materials.org/jsoo/exercise_oo.html</aside>
+        </section> 
+    
+        <!--Slide 36-->
+
+        <section>
+            <h2>Exercise: eFarmony</h2>
+            <p>Click <a href="https://github.com/AnnieCannons/ac-object-oriented-js/blob/gh-pages/eFarmony.js">here</a> and do in Visual Studio Code</p>
+            <a href="https://docs.google.com/spreadsheets/d/1dHybQNvrC0g8qR0Aolo75Cg68-Lc9ecrDJIfwZdYrbc/edit?usp=sharing" target="_blank"><img width="200" src="img/google-sheets.png" alt="Sheets logo"></a><br>
+            <img src="img/exercise.gif" alt="Exercise Time">
+        </section>
+        <!--  Slide 38 -->
+
+        <section>
+            <h2>Object-Oriented JavaScript Roundup</h2>
+            <p>Click <a href="https://docs.google.com/document/d/1U1YQiP0fzAbn7Tkhk-7WBNuFAvwZ61DkpDhi1SACmCM/edit?usp=sharing" target="_blank">here</a> to review.</p>
+        </section>
 
         <section style="text-align: left;">
             <h1>THE END</h1>
@@ -471,6 +1189,8 @@ sanFrancisco.slogan();
 
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/zoomin.js"></script>
 <script src="lib/js/head.min.js"></script>
 <script src="js/reveal.js"></script>
 
