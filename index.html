@@ -55,6 +55,12 @@
         </section>
 
         <section>
+            <h2>JavaScript & jQuery Textbook!</h2>
+            <p>Read Chapters 1b and pages 106 - 117</p>
+            <img src="img/javascript-textbook-cover.png" alt="JavaScript Textbook Cover" style="width: 400px;">
+        </section>
+
+        <section>
             <h2>What is Object Oriented JavaScript?</h2>
             <p>Let's break down those words by first reviewing objects.</p>
             <p>What is an <span style="color: yellow;">object</span>? <span class="fragment">An object stores a lot of info about a thing.</span></p>
@@ -157,6 +163,13 @@
                 <li class="fragment">imperative, aka it can support <span style="color:lightblue">object-oriented and prototype-based</span> programming styles. More on this soon!</li>
             </ul>
             <p class="fragment">In other words, JavaScript is awesome and multi-purpose!</p>
+        </section>
+
+        <section>
+            <h2>Onto Object Oriented JavaScript...</h2>
+            <p>Watch these <a href="https://docs.google.com/document/d/1uzAOfnqKt_tnuI7kWHu5Sc_jMtlzuP1EeMmN0enhSuY/edit?usp=sharing" target="_blank">Object Oriented JavaScript videos</a>.</p>
+            <a href="https://docs.google.com/spreadsheets/d/1dHybQNvrC0g8qR0Aolo75Cg68-Lc9ecrDJIfwZdYrbc/edit?usp=sharing" target="_blank"><img width="300" src="img/google-sheets.png" alt="Sheets logo"></a>
+            <img src="img/exercise.gif" alt="Exercise Time">
         </section>
 
         <section>
@@ -915,6 +928,16 @@ person1.constructor === person2.constructor; //true
             <aside class="notes"></aside>
         </section> 
     
+        <section>
+            <h2>
+                A Note on CodePen
+            </h2>
+            <img src="img/codepen.png" alt="CodePen logo">
+            <p>CodePen is similar to JS Bin in that it hosts a<br>read, evaluate, print loop (REPL) environment for our code.</p>
+            <p>Familiarize yourself with CodePen by reviewing these <a href="https://docs.google.com/document/d/1Q8OZgYZCfz_IcXsfarKE9uwFPoCffamj6ocwsR7Z4rc/edit?usp=sharing" target="_blank">instructions</a>.</p>
+            <aside class="notes"></aside>
+        </section> 
+
         <!--Slide 30--> 
 
         <section>
@@ -944,7 +967,7 @@ function Greeter(who) {
     this.me = who;
 }
 Greeter.prototype.identify = function() {
-    return "I am " + this.name;
+    return "I am " + this.me;
 };
 Greeter.prototype.speak = function() {
     alert("Hello, " + this.identify() + ".");
