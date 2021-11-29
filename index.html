@@ -49,10 +49,10 @@
         </section>
         <!--Slide 1-->
 
-        <section>
+        <!-- <section>
             <h2>Object Oriented JavaScript<br>Review Study Guide</h2>
             <p>Click <a href="https://docs.google.com/document/d/1U1YQiP0fzAbn7Tkhk-7WBNuFAvwZ61DkpDhi1SACmCM/edit?usp=sharing" target="_blank">here</a> to view and make a copy for reference.</p>
-        </section>
+        </section> -->
 
         <section>
             <h2>JavaScript & jQuery Textbook!</h2>
@@ -146,7 +146,7 @@
             <p style="color:yellow">Object-Oriented and Prototype-based</p>
             <ul>
                 <li class="fragment">Object-oriented programming is a programming paradigm based on objects, their properties and methods.</li>
-                <li class="fragment">Protoype-based programming permits reuse of methods from objects based as prototypes.</li>
+                <li class="fragment">Prototype-based programming permits reuse of methods from objects based as prototypes.</li>
                 <li class="fragment">Good news! The above concepts are what we will cover in this unit!</li>
             </ul>
         </section>
@@ -201,6 +201,19 @@
                 <p class="fragment">As programmers, we like to control both <span style="color:orange">data</span> and <span style="color: lightgreen">functionality</span>!</p>
             </section> 
 
+            <section>
+                <h3>Radio Example as an Object</h3>
+                <p>Based on the previous slide, let's create a radio object together that handles both <span style="color:orange">DATA</span> and <span style="color: lightgreen">FUNCTIONALITY</span>.</p>
+<pre><code class="js" data-trim contenteditable>
+//radio object example demo
+//properties: madeOfMetal, hasButtons, usesBatteries
+//methods: playMusic, displayTime, connectBluetooth
+
+</code></pre>
+                <p>Feel free to use <a href="https://jsbin.com/?js,console" target="_blank">JSBin</a>, if more room is needed.</p>
+                <aside class="notes">Instructor: please demo building a radio object. Example for reference: https://jsbin.com/sasipetipi/edit?js,console</aside>
+            </section> 
+
         <section>
             <h2>Objects</h2>
             <ul>
@@ -215,8 +228,8 @@
 <pre class="fragment"><code class="js" data-trim contenteditable>
 //Example of an object with properties
 var dice = {
-    sides: 6,
-    color: "green"  
+  sides: 6,
+  color: "green"  
 };
 </code></pre>
             </ul>
@@ -806,7 +819,7 @@ function Animal(species, noise) {
                 <li>A method to call when it is done.</li>
             </ul>
             <br>
-            <a href="https://docs.google.com/spreadsheets/d/1dHybQNvrC0g8qR0Aolo75Cg68-Lc9ecrDJIfwZdYrbc/edit?usp=sharing" target="_blank"><img width="200" src="img/google-sheets.png" alt="Sheets logo"></a>
+            <a href="https://trello.com/b/RQrD5Ye2" target="_blank"><img width="200" src="img/trello-logo-blue.png" alt="Trello logo"></a>
             <img src="img/exercise.gif" alt="Exercise Time">
         </section>
         
@@ -992,11 +1005,12 @@ person1.speak():
         <!--Slide 32-->
 
         <section>   
-            <h2>Review Exercise Part 1</h2>
+            <h2>Review Exercise</h2>
+            <!-- <h2>Review Exercise Part 1</h2> -->
             <p>Go to <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/object-oriented-programming/">FreeCodeCamp</a>.</p>
             <p>Sign in with your Github account.</p>
             <p>Complete the first 8 lessons (including instanceof).</p>
-            <a href="https://docs.google.com/spreadsheets/d/1dHybQNvrC0g8qR0Aolo75Cg68-Lc9ecrDJIfwZdYrbc/edit?usp=sharing" target="_blank"><img width="200" src="img/google-sheets.png" alt="Sheets logo"></a><br>
+            <a href="https://trello.com/b/RQrD5Ye2" target="_blank"><img width="200" src="img/trello-logo-blue.png" alt="Trello logo"></a><br>
             <img src="img/exercise.gif" alt="Exercise Time">
         </section>
 
@@ -1133,7 +1147,7 @@ customer1.speak();
             <aside class="notes"></aside>
         </section> 
             
-        <section>   
+        <!-- <section>   
             <h2>Review Exercise Part 2</h2>
             <p>Go to <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/object-oriented-programming/">FreeCodeCamp</a>.</p>
             <p>Sign in with your Github account.</p>
@@ -1141,7 +1155,7 @@ customer1.speak();
             <a href="https://docs.google.com/spreadsheets/d/1dHybQNvrC0g8qR0Aolo75Cg68-Lc9ecrDJIfwZdYrbc/edit?usp=sharing" target="_blank"><img width="200" src="img/google-sheets.png" alt="Sheets logo"></a>
             <img src="img/exercise.gif" alt="Exercise Time">
 
-        </section>
+        </section> -->
         <!--Slide 34-->
 
 
@@ -1183,7 +1197,7 @@ paperback.burn();
             <h2>Video Exercise</h2>
             <img data-enlargable width="400" style="border: 5px solid blue; cursor: zoom-in;"  src="img/creating-objects.png" alt="Creating Objects Exercise">
             <br>
-            <a href="https://docs.google.com/spreadsheets/d/1dHybQNvrC0g8qR0Aolo75Cg68-Lc9ecrDJIfwZdYrbc/edit?usp=sharing" target="_blank"><img width="100" src="img/google-sheets.png" alt="Sheets logo"></a>
+            <a href="https://trello.com/b/RQrD5Ye2" target="_blank"><img width="100" src="img/trello-logo-blue.png" alt="Trello logo"></a>
             <img width="200" src="img/exercise.gif" alt="Exercise Time">
             <aside class="notes">Use Visual Studio Code for this exercise. Scroll down at this link for the solution button: http://www.teaching-materials.org/jsoo/exercise_oo.html</aside>
         </section> 
@@ -1192,16 +1206,16 @@ paperback.burn();
 
         <section>
             <h2>Exercise: eFarmony</h2>
-            <p>Click <a href="https://github.com/AnnieCannons/ac-object-oriented-js/blob/gh-pages/eFarmony.js">here</a> and do in Visual Studio Code</p>
-            <a href="https://docs.google.com/spreadsheets/d/1dHybQNvrC0g8qR0Aolo75Cg68-Lc9ecrDJIfwZdYrbc/edit?usp=sharing" target="_blank"><img width="200" src="img/google-sheets.png" alt="Sheets logo"></a><br>
+            <p>Click <a href="https://github.com/AnnieCannons/ac-object-oriented-js/blob/gh-pages/eFarmony.js" target="_blank">here</a> and do in Visual Studio Code</p>
+            <a href="https://trello.com/b/RQrD5Ye2" target="_blank"><img width="200" src="img/trello-logo-blue.png" alt="Trello logo"></a><br>
             <img src="img/exercise.gif" alt="Exercise Time">
         </section>
         <!--  Slide 38 -->
 
-        <section>
+        <!-- <section>
             <h2>Object-Oriented JavaScript Roundup</h2>
             <p>Click <a href="https://docs.google.com/document/d/1U1YQiP0fzAbn7Tkhk-7WBNuFAvwZ61DkpDhi1SACmCM/edit?usp=sharing" target="_blank">here</a> to review.</p>
-        </section>
+        </section> -->
 
         <section style="text-align: left;">
             <h1>THE END</h1>
